@@ -95,167 +95,224 @@
             background: #00f2fe;
             color: #000;
         }
+
         .ranks-btn {
-  margin-top: 20px;
-  padding: 12px 25px;
-  border-radius: 25px;
-  border: 1px solid #ffcc33;
-  background: transparent;
-  color: #ffcc33;
-  font-weight: bold;
-  cursor: pointer;
-  transition: 0.3s;
-}
+            margin-top: 20px;
+            padding: 12px 25px;
+            border-radius: 25px;
+            border: 1px solid #ffcc33;
+            background: transparent;
+            color: #ffcc33;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-.ranks-btn:hover {
-  background: #ffcc33;
-  color: #000;
-}
+        .ranks-btn:hover {
+            background: #ffcc33;
+            color: #000;
+        }
 
-/* Modal */
-.modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.7);
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
-}
+        /* Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 999;
+        }
 
-.modal-content {
-  background: #020617;
-  padding: 25px;
-  border-radius: 20px;
-  max-width: 500px;
-  width: 90%;
-  border: 1px solid #00f2fe;
-  box-shadow: 0 0 30px rgba(0,242,254,0.3);
-  text-align: right;
-}
+        .modal-content {
+            background: #020617;
+            padding: 25px;
+            border-radius: 20px;
+            max-width: 500px;
+            width: 90%;
+            border: 1px solid #00f2fe;
+            box-shadow: 0 0 30px rgba(0, 242, 254, 0.3);
+            text-align: right;
+        }
 
-.modal-content h2 {
-  color: #00f2fe;
-  margin-top: 0;
-  text-align: center;
-}
+        .modal-content h2 {
+            color: #00f2fe;
+            margin-top: 0;
+            text-align: center;
+        }
 
-.ranks-list {
-  list-style: none;
-  padding: 0;
-  margin: 20px 0;
-}
+        .ranks-list {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0;
+        }
 
-.ranks-list li {
-  padding: 10px;
-  margin-bottom: 8px;
-  background: rgba(255,255,255,0.05);
-  border-radius: 12px;
-  font-size: 14px;
-  line-height: 1.6;
-}
+        .ranks-list li {
+            padding: 10px;
+            margin-bottom: 8px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            font-size: 14px;
+            line-height: 1.6;
+        }
 
-.close-btn {
-  display: block;
-  margin: 0 auto;
-  padding: 10px 25px;
-  border-radius: 25px;
-  border: none;
-  background: #00f2fe;
-  color: #000;
-  font-weight: bold;
-  cursor: pointer;
-}
-.buttons{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    flex-wrap:wrap;
-}
+        .close-btn {
+            display: block;
+            margin: 0 auto;
+            padding: 10px 25px;
+            border-radius: 25px;
+            border: none;
+            background: #00f2fe;
+            color: #000;
+            font-weight: bold;
+            cursor: pointer;
+        }
 
-.best-btn{
-    padding:10px 25px;
-    border-radius:30px;
-    border:1px solid #ffcc33;
-    background:transparent;
-    color:#ffcc33;
-    font-weight:bold;
-    cursor:pointer;
-    transition:0.3s;
-}
+        .buttons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
 
-.best-btn:hover{
-    background:#ffcc33;
-    color:#000;
-}
+        .best-btn {
+            padding: 10px 25px;
+            border-radius: 30px;
+            border: 1px solid #ffcc33;
+            background: transparent;
+            color: #ffcc33;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.3s;
+        }
 
-/* ===== مودال ===== */
-.modal{
-    display:none;
-    position:fixed;
-    inset:0;
-    background:rgba(0,0,0,0.7);
-    justify-content:center;
-    align-items:center;
-    z-index:1000;
-}
+        .best-btn:hover {
+            background: #ffcc33;
+            color: #000;
+        }
 
-.modal-content{
-    background:#020617;
-    padding:30px;
-    border-radius:20px;
-    width:90%;
-    max-width:500px;
-    border:1px solid #ffcc33;
-    text-align:center;
-}
+        /* ===== مودال ===== */
+        .modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0, 0, 0, 0.7);
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
 
-.modal-content h2{
-    color:#ffcc33;
-    margin-bottom:20px;
-}
+        .modal-content {
+            background: #020617;
+            padding: 30px;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 500px;
+            border: 1px solid #ffcc33;
+            text-align: center;
+        }
 
-.best-card{
-    margin-bottom:20px;
-}
+        .modal-content h2 {
+            color: #ffcc33;
+            margin-bottom: 20px;
+        }
 
-.best-card img{
-    width:100px;
-    height:100px;
-    border-radius:50%;
-    object-fit:cover;
-    border:3px solid #ffcc33;
-}
+        .best-card {
+            margin-bottom: 20px;
+        }
 
-.close-btn{
-    margin-top:20px;
-    padding:8px 25px;
-    border-radius:20px;
-    border:none;
-    background:#ffcc33;
-    cursor:pointer;
-    font-weight:bold;
-}
-.dev-signature{
-    margin-top:25px;
-    padding-top:15px;
-    border-top:1px dashed rgba(0,242,254,0.4);
-    font-family:'Cinzel',serif;
-    font-size:14px;
-    letter-spacing:1px;
-    color:#00f2fe;
-    opacity:0.85;
-    text-align:center;
-}
+        .best-card img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #ffcc33;
+        }
 
-/* تحسين للهاتف */
-@media (max-width:600px){
-    .dev-signature{
-        font-size:13px;
-    }
-}
+        .close-btn {
+            margin-top: 20px;
+            padding: 8px 25px;
+            border-radius: 20px;
+            border: none;
+            background: #ffcc33;
+            cursor: pointer;
+            font-weight: bold;
+        }
 
+        .dev-signature {
+            margin-top: 25px;
+            padding-top: 15px;
+            border-top: 1px dashed rgba(0, 242, 254, 0.4);
+            font-family: 'Cinzel', serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+            color: #00f2fe;
+            opacity: 0.85;
+            text-align: center;
+        }
 
+        /* تحسين للهاتف */
+        @media (max-width:600px) {
+            .dev-signature {
+                font-size: 13px;
+            }
+        }
+
+        .developer-badge {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            /* يمكنك تغييرها إلى right إذا أردت */
+            background: rgba(15, 23, 42, 0.6);
+            /* زجاجي داكن */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            padding: 8px 15px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 9999;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .developer-badge:hover {
+            transform: translateY(-5px) scale(1.05);
+            border-color: #00f2fe;
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.2);
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        .developer-badge .text {
+            font-family: 'Cinzel', serif;
+            /* أو أي خط تفضله */
+            font-size: 11px;
+            color: #fff;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+        }
+
+        .developer-badge .code-icon {
+            color: #00f2fe;
+            font-weight: 900;
+            font-family: monospace;
+            font-size: 14px;
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
     </style>
 </head>
 
@@ -277,12 +334,12 @@
             <p id="leader"></p>
         </div>
         <div class="dev-signature">
-    𝑲𝒂𝒊𝒓𝒐 – 𝑻𝒐𝒋𝒊 ⛧
-</div>
+            𝑲𝒂𝒊𝒓𝒐 – 𝑻𝒐𝒋𝒊 ⛧
+        </div>
 
         <button class="ranks-btn" onclick="openRanks()">📜 رتب النقابة</button>
         <a href="index.html" class="back">⬅ الرجوع للمملكة</a>
-         <button class="best-btn" onclick="openBest()">⭐ أفضل الأعضاء</button>
+        <button class="best-btn" onclick="openBest()">⭐ أفضل الأعضاء</button>
     </div>
 
     <script>
@@ -339,64 +396,68 @@
             document.getElementById("logo").style.display = "none";
         }
         function openRanks() {
-  document.getElementById("ranksModal").style.display = "flex";
-}
+            document.getElementById("ranksModal").style.display = "flex";
+        }
 
-function closeRanks() {
-  document.getElementById("ranksModal").style.display = "none";
-}
+        function closeRanks() {
+            document.getElementById("ranksModal").style.display = "none";
+        }
 
-window.onclick = function(e) {
-  const modal = document.getElementById("ranksModal");
-  if (e.target === modal) closeRanks();
-};
-function openBest(){
-    document.getElementById("bestModal").style.display = "flex";
-}
+        window.onclick = function (e) {
+            const modal = document.getElementById("ranksModal");
+            if (e.target === modal) closeRanks();
+        };
+        function openBest() {
+            document.getElementById("bestModal").style.display = "flex";
+        }
 
-function closeBest(){
-    document.getElementById("bestModal").style.display = "none";
-}
+        function closeBest() {
+            document.getElementById("bestModal").style.display = "none";
+        }
 
 
     </script>
     <div id="ranksModal" class="modal">
-  <div class="modal-content">
-    <h2>📜 رتب إدارة النقابة</h2>
+        <div class="modal-content">
+            <h2>📜 رتب إدارة النقابة</h2>
 
-    <ul class="ranks-list">
-      <li>♛ | ر الجنرال لـ 「ماكي🎀ما」</li>
-      <li>❄️ | نائب الجنرال 「」</li>
-      <li>❄️ | ر اليونكو لـ 「 」</li>
-      <li>❄️ | ر عميد لـ 「」</li>
-      <li>❄️ | ر هاشيرا لـ 「️」</li>
-      <li>❄️ | ر انبو لـ 「🌸」</li>
-      <li>❄️ | ر الهوميز لـ 「」</li>
-      <li>❄️ | ر البارون لـ 「」</li>
-      <li>❄️ | ر مشرف تدريبي لـ 「」</li>
-    </ul>
+            <ul class="ranks-list">
+                <li>♛ | ر الجنرال لـ 「ماكي🎀ما」</li>
+                <li>❄️ | نائب الجنرال 「」</li>
+                <li>❄️ | ر اليونكو لـ 「 」</li>
+                <li>❄️ | ر عميد لـ 「」</li>
+                <li>❄️ | ر هاشيرا لـ 「️」</li>
+                <li>❄️ | ر انبو لـ 「🌸」</li>
+                <li>❄️ | ر الهوميز لـ 「」</li>
+                <li>❄️ | ر البارون لـ 「」</li>
+                <li>❄️ | ر مشرف تدريبي لـ 「」</li>
+            </ul>
 
-    <button class="close-btn" onclick="closeRanks()">❌ إغلاق</button>
-  </div>
-</div>
-
-<div class="modal" id="bestModal">
-    <div class="modal-content">
-        <h2>⭐ أفضل الأعضاء</h2>
-
-        <div class="best-card">
-            <img src="./best-post.jfif" alt="">
-            <p><b>أفضل في النشر</b><br>「اسم العضو」</p>
+            <button class="close-btn" onclick="closeRanks()">❌ إغلاق</button>
         </div>
-
-        <div class="best-card">
-            <img src="./best-react.jfif" alt="">
-            <p><b>أفضل في التفاعل</b><br>「اسم العضو」</p>
-        </div>
-
-        <button class="close-btn" onclick="closeBest()">إغلاق ✖</button>
     </div>
-</div>
+
+    <div class="modal" id="bestModal">
+        <div class="modal-content">
+            <h2>⭐ أفضل الأعضاء</h2>
+
+            <div class="best-card">
+                <img src="./best-post.jfif" alt="">
+                <p><b>أفضل في النشر</b><br>「اسم العضو」</p>
+            </div>
+
+            <div class="best-card">
+                <img src="./best-react.jfif" alt="">
+                <p><b>أفضل في التفاعل</b><br>「اسم العضو」</p>
+            </div>
+
+            <button class="close-btn" onclick="closeBest()">إغلاق ✖</button>
+        </div>
+    </div>
+    <a href="#" class="developer-badge">
+        <span class="text"> 𝑲𝒂𝒊𝒓𝒐 – 𝑻𝒐𝒋𝒊 ⛧</span>
+        <span class="code-icon">&lt;/&gt;</span>
+    </a>
 
 </body>
 
