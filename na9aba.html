@@ -156,17 +156,29 @@
             line-height: 1.6;
         }
 
-        .close-btn {
-            display: block;
-            margin: 0 auto;
-            padding: 10px 25px;
-            border-radius: 25px;
-            border: none;
-            background: #00f2fe;
-            color: #000;
-            font-weight: bold;
-            cursor: pointer;
-        }
+        .close-btn{
+    width:100%;
+    margin-top:15px;
+    padding:10px;
+    border:none;
+    border-radius:20px;
+    background:#00f2fe;
+    color:#000;
+    font-weight:bold;
+    cursor:pointer;
+    position:sticky;
+    bottom:0;
+}
+
+        .rank-item{
+    margin-bottom:15px;
+    padding:12px;
+    background:rgba(255,255,255,0.05);
+    border-radius:12px;
+    border-right:3px solid #ffcc33;
+    text-align:right;
+    font-size:14px;
+}
 
         .buttons {
             display: flex;
@@ -192,25 +204,31 @@
         }
 
         /* ===== مودال ===== */
-        .modal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0, 0, 0, 0.7);
-            justify-content: center;
-            align-items: center;
-            z-index: 1000;
-        }
+        .modal{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,0.7);
+    display:none;
+    justify-content:center;
+    align-items:center;
+    z-index:9999;
+}
 
-        .modal-content {
-            background: #020617;
-            padding: 30px;
-            border-radius: 20px;
-            width: 90%;
-            max-width: 500px;
-            border: 1px solid #ffcc33;
-            text-align: center;
-        }
+.modal-content{
+    background:#020617;
+    width:90%;
+    max-width:500px;
+    max-height:85vh; /* ← هذا هو السر */
+    padding:20px;
+    border-radius:20px;
+    border:1px solid #00f2fe;
+    overflow-y:auto; /* ← scroll */
+    text-align:right;
+}
+
 
         .modal-content h2 {
             color: #ffcc33;
@@ -360,6 +378,132 @@
             "ايفرست": { desc: "نقابة النخبة الأولى، تشرف على أخطر المهام داخل المملكة.", leader: "جنرال ماكيما", img: "./Makima.jfif" },
             "ناريا": { desc: "نقابة النخبة الأولى، تشرف على أخطر المهام داخل المملكة.", leader: "جنرال تشيفويو", img: "./chifuyu.jfif" }
         };
+const afdalMembers = {
+    "برايم": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "توچي", img: "./Toji.jfif" }
+    },
+    "رايتون": {
+        post: { name: "سونغ", img: "./Sung Jinwoo.jfif" },
+        react: { name: "غوكو", img: "./goku.jfif" }
+    },
+    "ايفرست": {
+        post: { name: "بوندرود", img: "./Makima.jfif" },
+        react: { name: "ميتاكا", img: "./mitaka !.jfif" }
+    },
+    "طوكيو": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "فيلورا": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "مانهاتن": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "دايف": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "سبارتا": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "سيلفا": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "شيبويا": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "اكاتسكي": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "ناريا": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "يورك": {
+        post: { name: "يوشيدا", img: "./yochida.jfif" },
+        react: { name: "ايساغي", img: "./isagi.jfif" }
+    },
+    "تسوكي": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "شينغامي": {
+        post: { name: "لايت", img: "./lait.jfif" },
+        react: { name: "اوراهارا", img: "./orahara.jfif" }
+    },
+    "اسبادا": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "اثينا": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "موسكو": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "كاريون": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "كاريوكي": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "نوفا": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "الديا": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "يوركشن": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    },
+    "هيروكو": {
+        post: { name: "ماكيما", img: "./Makima.jfif" },
+        react: { name: "كايدو", img: "./kaido.jfif" }
+    }
+   
+};
+const na9abaRanks = {
+    "ايفرست": [
+        "♛ | ر الجنرال لـ 「ماكي🎀ما」",
+        "❄️ | نائب الجنرال 「ميه⚡وك -باين🍁- بوند رود⛓️」",
+        "❄️ | ر اليونكو لـ 「 」",
+        "❄️ | ر عميد لـ 「ذويل🌸」",
+        "❄️ | ر هاشيرا لـ 「سبيـدرمان🕷️」",
+        "❄️ | ر انبو لـ 「ميتاكا🌸」",
+        "❄️ | ر الهوميز لـ 「أوبياشكي - أكي 」",
+        "❄️ | ر البارون لـ 「مادارا-كاكاشي-ساكورا-ناغي-سوبارو-فيجيتا」",
+        "❄️ | ر مشرف تدريبي لـ 「تودو-غوكو-واغوري-سوكونا-بياكويا-روبين-ميدوريا-كايدو-شو-ال」"
+    ],
+
+    "برايم": [
+        "⌘ | إدارة النقابة",
+        "♛ | الجنرال 「غاتس」",
+        "❄️ | نائب الجنرال 「توچي」",
+        "❄️ | القادة الميدانيون 「—」"
+    ],
+
+    "رايتون": [
+        "⌘ | إدارة النقابة",
+        "♛ | الجنرال 「سونغ」",
+        "❄️ | نائب الجنرال 「غوكو」"
+    ]
+};
+
 
         // قراءة الاسم والإقليم من الرابط
         const params = new URLSearchParams(window.location.search);
@@ -396,52 +540,85 @@
             if (e.target === modal) closeRanks();
         };
         function openBest() {
-            document.getElementById("bestModal").style.display = "flex";
-        }
+    const data = afdalMembers[cleanName];
+
+    if (data) {
+        document.getElementById("bestPostImg").src = data.post.img;
+        document.getElementById("bestPostName").innerText = data.post.name;
+
+        document.getElementById("bestReactImg").src = data.react.img;
+        document.getElementById("bestReactName").innerText = data.react.name;
+    } else {
+        document.getElementById("bestPostImg").style.display = "none";
+        document.getElementById("bestReactImg").style.display = "none";
+        document.getElementById("bestPostName").innerText = "غير محدد";
+        document.getElementById("bestReactName").innerText = "غير محدد";
+    }
+
+    document.getElementById("bestModal").style.display = "flex";
+}
+
 
         function closeBest() {
             document.getElementById("bestModal").style.display = "none";
         }
+        function openRanks(){
+    const list = document.getElementById("ranksList");
+    list.innerHTML = "";
+
+    const ranks = na9abaRanks[cleanName];
+
+    if(ranks){
+        ranks.forEach(rank=>{
+            const div = document.createElement("div");
+            div.className = "rank-item";
+            div.innerText = rank;
+            list.appendChild(div);
+        });
+    }else{
+        list.innerHTML = "<p>لا توجد رتب مسجلة لهذه النقابة.</p>";
+    }
+
+    document.getElementById("ranksModal").style.display = "flex";
+}
+
+function closeRanks(){
+    document.getElementById("ranksModal").style.display = "none";
+}
 
 
     </script>
-    <div id="ranksModal" class="modal">
-        <div class="modal-content">
-            <h2>📜 رتب إدارة النقابة</h2>
-
-            <ul class="ranks-list">
-                <li>♛ | ر الجنرال لـ 「ماكي🎀ما」</li>
-                <li>❄️ | نائب الجنرال 「」</li>
-                <li>❄️ | ر اليونكو لـ 「 」</li>
-                <li>❄️ | ر عميد لـ 「」</li>
-                <li>❄️ | ر هاشيرا لـ 「️」</li>
-                <li>❄️ | ر انبو لـ 「🌸」</li>
-                <li>❄️ | ر الهوميز لـ 「」</li>
-                <li>❄️ | ر البارون لـ 「」</li>
-                <li>❄️ | ر مشرف تدريبي لـ 「」</li>
-            </ul>
-
-            <button class="close-btn" onclick="closeRanks()">❌ إغلاق</button>
-        </div>
+    <div class="modal" id="ranksModal">
+    <div class="modal-content">
+        <h2>🏔️ رتب النقابة</h2>
+        <div id="ranksList"></div>
+        <button class="close-btn" onclick="closeRanks()">إغلاق ✖</button>
     </div>
+</div>
+
 
     <div class="modal" id="bestModal">
-        <div class="modal-content">
-            <h2>⭐ أفضل الأعضاء</h2>
+    <div class="modal-content">
+        <h2>⭐ أفضل الأعضاء</h2>
 
-            <div class="best-card">
-                <img src="./best-post.jfif" alt="">
-                <p><b>أفضل في النشر</b><br>「اسم العضو」</p>
-            </div>
-
-            <div class="best-card">
-                <img src="./best-react.jfif" alt="">
-                <p><b>أفضل في التفاعل</b><br>「اسم العضو」</p>
-            </div>
-
-            <button class="close-btn" onclick="closeBest()">إغلاق ✖</button>
+        <div class="best-card">
+            <img id="bestPostImg">
+            <p><b>أفضل في النشر</b><br>
+                <span id="bestPostName"></span>
+            </p>
         </div>
+
+        <div class="best-card">
+            <img id="bestReactImg">
+            <p><b>أفضل في التفاعل</b><br>
+                <span id="bestReactName"></span>
+            </p>
+        </div>
+
+        <button class="close-btn" onclick="closeBest()">إغلاق ✖</button>
     </div>
+</div>
+
     <a href="#" class="developer-badge">
         <span class="text"> 𝑲𝒂𝒊𝒓𝒐 – 𝑻𝒐𝒋𝒊 ⛧</span>
         <span class="code-icon">&lt;/&gt;</span>
