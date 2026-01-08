@@ -352,7 +352,16 @@
     margin-right:20px;
     margin-bottom:8px;
 }
+#modalList .member-item a {
+    color: yellow;
+    text-decoration: none; /* باش ما يبانش underline إلا بغيت */
+    font-weight: bold; /* بارز شوية */
+}
 
+/* باقي التفاصيل ممكن تبقى باللون الأبيض أو أي لون آخر */
+#modalList .member-item small {
+    color: white;
+}
     </style>
 </head>
 
@@ -437,17 +446,17 @@
             <div class="region-card" onclick='showRegion(
   "سالوريا",
   "ايتشيبي",
-  "https:images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=400",
+  "./itchibi.jfif",
   {
     "غيتو": {
-      img: "https:imgs.search.brave.com/6cHzchUeOABeS6X3qthzQdoE1fsUZzV2w9XqCLuXmtU/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzLzY4LzBh/Lzg1LzY4MGE4NTE0/NTdiN2M1YmZlOGQ2/ZjA4ODhjNGM3NzE1/LmpwZw",
+      img: "./gito.jfif",
       na9abat: [
         "ناريا | جنرال تشيفويو",
         "ايفرست | جنرال ماكيما"
       ]
     },
     "يوتا": {
-      img: "https:imgs.search.brave.com/e-GG0R3VBRmGMFSj4g1btkvt2Xg3tWp7uNowYuJbVIE/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly9pLnBp/bmltZy5jb20vb3Jp/Z2luYWxzL2Y3LzJm/LzBlL2Y3MmYwZWI2/NDU0MzEzZTJlYmIx/OGU1MzI1NDJiN2U1/LmpwZw",
+      img: "./yuta.jfif",
       na9abat: [
         "يورك | جنرال بطه",
         "شينغامي | جنرال هيناتا"
@@ -664,6 +673,23 @@
 
         function closeModal() { document.getElementById('regionModal').style.display = 'none'; }
         window.onclick = function (e) { if (e.target == document.getElementById('regionModal')) closeModal(); }
+        details.forEach(item => {
+    const parts = item.split('|');
+    const div = document.createElement('div');
+    div.className = "member-item";
+
+    // الاسم ديال النقابة فقط
+    const na9abaName = parts[0].trim(); 
+    const otherInfo = parts.slice(1).join('|').trim();
+
+    div.innerHTML = `
+        <b style="color: yellow;">${na9abaName}</b>
+        <br>
+        <small style="color: white;">${otherInfo}</small>
+    `;
+    listDiv.appendChild(div);
+});
+
     </script>
 </body>
 
