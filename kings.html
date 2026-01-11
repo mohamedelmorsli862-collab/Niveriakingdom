@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>ملوك المملكة</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Cairo', sans-serif;
+}
+
+body{
+    background:#000;
+    min-height:100vh;
+    padding:60px 0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+
+
+/* GRID */
+.container{
+    width:90%;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap:35px;
+}
+
+/* CARD */
+.card{
+    height:420px;
+    border-radius:22px;
+    position:relative;
+    overflow:hidden;
+    border:2px solid #00ff99;
+    box-shadow:0 0 25px rgba(0,255,153,0.3);
+    transform: translateY(40px);
+    opacity:0;
+    animation: fadeUp 1s ease forwards;
+}
+
+/* animation delay */
+.card:nth-child(1){animation-delay:0.2s}
+.card:nth-child(2){animation-delay:0.4s}
+.card:nth-child(3){animation-delay:0.6s}
+
+/* background image */
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-size:cover;
+    background-position:center;
+    filter:brightness(0.25) blur(2px);
+    transform:scale(1.1);
+    transition:0.6s;
+}
+
+/* hover background */
+.card:hover::before{
+    filter:brightness(0.45) blur(0);
+    transform:scale(1.2);
+}
+
+/* overlay */
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, #000 25%, transparent);
+    z-index:1;
+}
+
+/* content */
+.content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding-top:30px;
+}
+
+/* avatar */
+.avatar{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    margin:0 auto 15px;
+    overflow:hidden;
+    border:5px solid gold;
+    box-shadow:0 0 30px gold;
+    transition:0.5s;
+}
+
+.card:hover .avatar{
+    transform:scale(1.1) rotate(2deg);
+}
+
+.avatar img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* name */
+.name{
+    font-size:26px;
+    font-weight:700;
+    color:gold;
+}
+
+/* crown */
+.crown{
+    font-size:32px;
+    margin:5px 0;
+}
+
+/* icons */
+.icons{
+    margin-top:15px;
+    font-size:20px;
+    color:#eee;
+    line-height:1.7;
+}
+
+/* hover card */
+.card:hover{
+    box-shadow:0 0 45px rgba(0,255,153,0.8);
+    transform:translateY(-10px);
+}
+
+/* KING */
+.king{
+    border-color:gold;
+    box-shadow:0 0 40px rgba(255,215,0,0.6);
+}
+
+.king .avatar{
+    border-color:#00ff99;
+    box-shadow:0 0 30px #00ff99;
+}
+
+/* animation */
+@keyframes fadeUp{
+    to{
+        transform:translateY(0);
+        opacity:1;
+    }
+}
+
+/* TITLE */
+/* TITLE */
+.title-box{
+    width:100%;
+    text-align:center;
+    margin-bottom:50px;
+    animation:titleFade 1.2s ease forwards;
+}
+
+
+.title-box h1{
+    font-size:46px;
+    color:gold;
+    letter-spacing:3px;
+    text-shadow:
+        0 0 10px gold,
+        0 0 25px rgba(255,215,0,0.8);
+    margin:10px 0;
+}
+
+.title-box p{
+    color:#aaa;
+    font-size:18px;
+    letter-spacing:1px;
+}
+
+/* decorative line */
+.line{
+    width:220px;
+    height:3px;
+    margin:10px auto;
+    background:linear-gradient(90deg, transparent, #00ff99, transparent);
+    box-shadow:0 0 15px #00ff99;
+}
+
+/* animation */
+@keyframes titleFade{
+    from{
+        opacity:0;
+        transform:translateY(-25px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+/* =========================
+   MOBILE RESPONSIVE
+========================= */
+@media (max-width: 768px){
+
+    body{
+        padding:40px 0;
+    }
+
+    /* title */
+    .title-box h1{
+        font-size:32px;
+        letter-spacing:2px;
+    }
+
+    .title-box p{
+        font-size:15px;
+    }
+
+    .line{
+        width:150px;
+    }
+
+    /* cards layout */
+    .container{
+        width:92%;
+        grid-template-columns:1fr;
+        gap:30px;
+    }
+
+    /* card size */
+    .card{
+        height:400px;
+    }
+
+    /* avatar */
+    .avatar{
+        width:120px;
+        height:120px;
+    }
+
+    .name{
+        font-size:22px;
+    }
+
+    .icons{
+        font-size:18px;
+    }
+}
+
+
+</style>
+</head>
+
+<body>
+    <!-- TITLE SECTION -->
+<div class="title-box">
+    <div class="line"></div>
+    <h1>👑 الملوك 👑</h1>
+    <p>حُكّام مملكة كونوها العظمى</p>
+    <div class="line"></div>
+</div>
+
+
+<div class="container">
+
+    <!-- CARD 1 -->
+    <div class="card" style="--bg:url('./itchibi.jfif')">
+        <style>
+            .card:nth-child(1)::before{background-image:url('./itchibi.jfif')}
+        </style>
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="avatar">
+                <img src="./itchibi.jfif">
+            </div>
+            <div class="name">🎵 ايتشيبي</div>
+            <div class="icons">🗻 ♠️ ❄️ ⚡ 🌙 🐉</div>
+        </div>
+    </div>
+
+    <!-- CARD 2 -->
+    <div class="card" style="--bg:url('./subaru.jfif')">
+        <style>
+            .card:nth-child(2)::before{background-image:url('./subaru.jfif')}
+        </style>
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="avatar">
+                <img src="./subaru.jfif">
+            </div>
+            <div class="name">⭐ سوبارو</div>
+            <div class="icons">🔥 🌪️ 🌊 ☀️ ⭐</div>
+        </div>
+    </div>
+
+    <!-- CARD 3 KING -->
+   <div class="card" style="--bg:url('./misa.jfif')">
+        <style>
+            .card:nth-child(3)::before{background-image:url('./misa.jfif')}
+        </style>
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="avatar">
+                <img src="./misa.jfif">
+            </div>
+            <div class="name">🪐 ميسا</div>
+            <div class="icons">🎀 🍁 🌧️ ☘️ 👑</div>
+        </div>
+    </div>
+
+    <div class="card" style="--bg:url('./musachi.jfif')">
+        <style>
+            .card:nth-child(3)::before{background-image:url('./musachi.jfif')}
+        </style>
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="avatar">
+                <img src="./musachi.jfif">
+            </div>
+            <div class="name">🪐 موساشي</div>
+            <div class="icons">🎀 🍁 🌧️ ☘️ 👑</div>
+        </div>
+    </div>
+
+     <div class="card" style="--bg:url('./Naruto.jfif')">
+        <style>
+            .card:nth-child(3)::before{background-image:url('./Naruto.jfif')}
+        </style>
+        <div class="overlay"></div>
+        <div class="content">
+            <div class="avatar">
+                <img src="./Naruto.jfif">
+            </div>
+            <div class="name">🪐 ناروتو</div>
+            <div class="icons">🎀 🍁 🌧️ ☘️ 👑</div>
+        </div>
+    </div>
+
+    
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<title>دوقات المملكة</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#020617;
+  --card:#0f172a;
+  --gold:#facc15;
+  --soft:#94a3b8;
+}
+
+body{
+  margin:0;
+  font-family:'Cairo',sans-serif;
+  background:radial-gradient(circle at top,#0f172a,#020617);
+  color:white;
+}
+
+/* ===== العنوان ===== */
+header{
+  text-align:center;
+  padding:80px 20px 40px;
+}
+
+header h1{
+  color:var(--gold);
+  font-size:2.5rem;
+  margin-bottom:10px;
+}
+
+header p{
+  opacity:.7;
+  letter-spacing:1px;
+}
+
+/* ===== الحاوية ===== */
+.container{
+  max-width:1200px;
+  margin:auto;
+  padding:20px;
+}
+
+/* ===== بطاقة الدوق ===== */
+.duke-card{
+  background:linear-gradient(145deg,#020617,#0f172a);
+  border:1px solid rgba(250,204,21,.3);
+  border-radius:25px;
+  padding:25px;
+  margin-bottom:40px;
+  box-shadow:0 0 40px rgba(250,204,21,.15);
+}
+
+/* رأس الدوق */
+.duke-header{
+  display:flex;
+  align-items:center;
+  gap:20px;
+  margin-bottom:20px;
+}
+
+.duke-header img{
+  width:110px;
+  height:110px;
+  border-radius:50%;
+  object-fit:cover;
+  border:3px solid var(--gold);
+  box-shadow:0 0 20px rgba(250,204,21,.4);
+}
+
+.duke-header h2{
+  margin:0;
+  font-size:1.8rem;
+  color:var(--gold);
+}
+
+.duke-header span{
+  font-size:14px;
+  color:var(--soft);
+}
+
+/* ===== النواب ===== */
+.nawab-box{
+  margin-top:20px;
+}
+
+.nawab-box h3{
+  margin-bottom:10px;
+  color:var(--gold);
+  font-size:1.2rem;
+}
+
+.nawab-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(130px,1fr));
+  gap:15px;
+}
+
+.nawab{
+  background:rgba(255,255,255,.03);
+  border:1px solid rgba(250,204,21,.2);
+  border-radius:15px;
+  padding:10px;
+  text-align:center;
+}
+
+.nawab img{
+  width:70px;
+  height:70px;
+  border-radius:50%;
+  object-fit:cover;
+  border:2px solid var(--gold);
+}
+
+.nawab p{
+  margin:8px 0 0;
+  font-size:14px;
+  color:var(--gold);
+}
+
+/* ===== النقابات ===== */
+.na9abat-box{
+  margin-top:25px;
+}
+
+.na9abat-box h3{
+  color:var(--gold);
+  margin-bottom:10px;
+}
+
+.na9abat{
+  display:flex;
+  flex-wrap:wrap;
+  gap:12px;
+}
+
+.na9aba{
+  padding:8px 16px;
+  border-radius:20px;
+  background:rgba(250,204,21,.12);
+  border:1px solid rgba(250,204,21,.4);
+  font-size:14px;
+  color:var(--gold);
+}
+
+/* الهاتف */
+@media(max-width:600px){
+  .duke-header{
+    flex-direction:column;
+    text-align:center;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <h1>🏰 دوقات المملكة 🏰</h1>
+  <p>هنا نقدم جميع الدوقات الرسميين داخل المملكة</p>
+</header>
+
+<div class="container">
+
+<!-- ===== دوق 1 ===== -->
+<div class="duke-card">
+  <div class="duke-header">
+    <img src="./shoto.jfif">
+    <div>
+      <h2>الدوق شوتو</h2>
+      <span>حاكم نقابات الشرف</span>
+    </div>
+  </div>
+
+  <div class="nawab-box">
+    <h3>👥 النواب</h3>
+    <div class="nawab-grid">
+      <div class="nawab">
+        <img src="./nawab1.jfif">
+        <p>النائب الأول</p>
+      </div>
+      <div class="nawab">
+        <img src="./nawab2.jfif">
+        <p>النائب الثاني</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="na9abat-box">
+    <h3>⚔️ النقابات التابعة</h3>
+    <div class="na9abat">
+      <div class="na9aba">الديا</div>
+      <div class="na9aba">اثينا</div>
+    </div>
+  </div>
+</div>
+
+<!-- ===== دوق 2 ===== -->
+<div class="duke-card">
+  <div class="duke-header">
+    <img src="./hachirama.jfif">
+    <div>
+      <h2>الدوق هاشيراما</h2>
+      <span>حامي التوازن</span>
+    </div>
+  </div>
+
+  <div class="nawab-box">
+    <h3>👥 النواب</h3>
+    <div class="nawab-grid">
+      <div class="nawab">
+        <img src="./nawab3.jfif">
+        <p>النائب الأول</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="na9abat-box">
+    <h3>⚔️ النقابات التابعة</h3>
+    <div class="na9abat">
+      <div class="na9aba">كاريوكي</div>
+    </div>
+  </div>
+</div>
+<div class="duke-card">
+  <div class="duke-header">
+    <img src="./yami.jfif">
+    <div>
+      <h2>الدوق يامي</h2>
+      <span>حاكم نقابات الشرف</span>
+    </div>
+  </div>
+
+  <div class="nawab-box">
+    <h3>👥 النواب</h3>
+    <div class="nawab-grid">
+      <div class="nawab">
+        <img src="./nawab1.jfif">
+        <p>النائب الأول</p>
+      </div>
+      <div class="nawab">
+        <img src="./nawab2.jfif">
+        <p>النائب الثاني</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="na9abat-box">
+    <h3>⚔️ النقابات التابعة</h3>
+    <div class="na9abat">
+      <div class="na9aba">ناريا</div>
+      <div class="na9aba">ايفريست</div>
+    </div>
+  </div>
+</div>
+
+<div class="duke-card">
+  <div class="duke-header">
+    <img src="./yo">
+    <div>
+      <h2>الدوق يوتا</h2>
+      <span>حاكم نقابات الشرف</span>
+    </div>
+  </div>
+
+  <div class="nawab-box">
+    <h3>👥 النواب</h3>
+    <div class="nawab-grid">
+      <div class="nawab">
+        <img src="./nawab1.jfif">
+        <p>النائب الأول</p>
+      </div>
+      <div class="nawab">
+        <img src="./nawab2.jfif">
+        <p>النائب الثاني</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="na9abat-box">
+    <h3>⚔️ النقابات التابعة</h3>
+    <div class="na9abat">
+      <div class="na9aba">شينيغامي</div>
+      <div class="na9aba">يورك </div>
+    </div>
+  </div>
+</div>
+
+<div class="duke-card">
+  <div class="duke-header">
+    <img src="./lance.jfif">
+    <div>
+      <h2>الدوق لانس</h2>
+      <span>حاكم نقابات الشرف</span>
+    </div>
+  </div>
+
+  <div class="nawab-box">
+    <h3>👥 النواب</h3>
+    <div class="nawab-grid">
+      <div class="nawab">
+        <img src="./nawab1.jfif">
+        <p>النائب الأول</p>
+      </div>
+      <div class="nawab">
+        <img src="./nawab2.jfif">
+        <p>النائب الثاني</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="na9abat-box">
+    <h3>⚔️ النقابات التابعة</h3>
+    <div class="na9abat">
+      <div class="na9aba">مانهاتن</div>
+      <div class="na9aba">يوركشن</div>
+    </div>
+  </div>
+</div>
+
+<div class="duke-card">
+  <div class="duke-header">
+    <img src="./forina.jfif">
+    <div>
+      <h2>الدوق فورينا</h2>
+      <span>حاكم نقابات الشرف</span>
+    </div>
+  </div>
+
+  <div class="nawab-box">
+    <h3>👥 النواب</h3>
+    <div class="nawab-grid">
+      <div class="nawab">
+        <img src="./nawab1.jfif">
+        <p>النائب الأول</p>
+      </div>
+      <div class="nawab">
+        <img src="./nawab2.jfif">
+        <p>النائب الثاني</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="na9abat-box">
+    <h3>⚔️ النقابات التابعة</h3>
+    <div class="na9abat">
+      <div class="na9aba">طوكيو</div>
+      <div class="na9aba">هيروكو</div>
+    </div>
+  </div>
+</div>
+
+<div class="duke-card">
+  <div class="duke-header">
+    <img src="./ban.jfif">
+    <div>
+      <h2>الدوق بان</h2>
+      <span>حاكم نقابات الشرف</span>
+    </div>
+  </div>
+
+  <div class="nawab-box">
+    <h3>👥 النواب</h3>
+    <div class="nawab-grid">
+      <div class="nawab">
+        <img src="./nawab1.jfif">
+        <p>النائب الأول</p>
+      </div>
+      <div class="nawab">
+        <img src="./nawab2.jfif">
+        <p>النائب الثاني</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="na9abat-box">
+    <h3>⚔️ النقابات التابعة</h3>
+    <div class="na9abat">
+      <div class="na9aba">سيلفا</div>
+      <div class="na9aba">نوفا</div>
+    </div>
+  </div>
+</div>
+
+<div class="duke-card">
+  <div class="duke-header">
+    <img src="./yor.jfif">
+    <div>
+      <h2>الدوق يور</h2>
+      <span>حاكم نقابات الشرف</span>
+    </div>
+  </div>
+
+  <div class="nawab-box">
+    <h3>👥 النواب</h3>
+    <div class="nawab-grid">
+      <div class="nawab">
+        <img src="./nawab1.jfif">
+        <p>النائب الأول</p>
+      </div>
+      <div class="nawab">
+        <img src="./nawab2.jfif">
+        <p>النائب الثاني</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="na9abat-box">
+    <h3>⚔️ النقابات التابعة</h3>
+    <div class="na9abat">
+      <div class="na9aba">سيلفا</div>
+    </div>
+  </div>
+</div>
+
+<div class="duke-card">
+  <div class="duke-header">
+    <img src="./thorfine.jfif">
+    <div>
+      <h2>الدوق ثورفين</h2>
+      <span>حاكم نقابات الشرف</span>
+    </div>
+  </div>
+
+  <div class="nawab-box">
+    <h3>👥 النواب</h3>
+    <div class="nawab-grid">
+      <div class="nawab">
+        <img src="./nawab1.jfif">
+        <p>النائب الأول</p>
+      </div>
+      <div class="nawab">
+        <img src="./nawab2.jfif">
+        <p>النائب الثاني</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="na9abat-box">
+    <h3>⚔️ النقابات التابعة</h3>
+    <div class="na9abat">
+      <div class="na9aba">ويسكي</div>
+    </div>
+  </div>
+</div>
+
+<div class="duke-card">
+  <div class="duke-header">
+    <img src="./Toji.jfif">
+    <div>
+      <h2>الدوق توجي</h2>
+      <span>حاكم نقابات الشرف</span>
+    </div>
+  </div>
+
+  <div class="nawab-box">
+    <h3>👥 النواب</h3>
+    <div class="nawab-grid">
+      <div class="nawab">
+        <img src="./nawab1.jfif">
+        <p>النائب الأول</p>
+      </div>
+      <div class="nawab">
+        <img src="./nawab2.jfif">
+        <p>النائب الثاني</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="na9abat-box">
+    <h3>⚔️ النقابات التابعة</h3>
+    <div class="na9abat">
+      <div class="na9aba">دايف</div>
+    </div>
+  </div>
+</div>
+
+<div class="duke-card">
+  <div class="duke-header">
+    <img src="./Toj.jfif">
+    <div>
+      <h2>الدوق شاغر</h2>
+      <span>حاكم نقابات الشرف</span>
+    </div>
+  </div>
+
+  <div class="nawab-box">
+    <h3>👥 النواب</h3>
+    <div class="nawab-grid">
+      <div class="nawab">
+        <img src="./nawab1.jfif">
+        <p>النائب الأول</p>
+      </div>
+      <div class="nawab">
+        <img src="./nawab2.jfif">
+        <p>النائب الثاني</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="na9abat-box">
+    <h3>⚔️ النقابات التابعة</h3>
+    <div class="na9abat">
+      <div class="na9aba">سبارتا</div>
+    </div>
+  </div>
+</div>
+
+<div class="duke-card">
+  <div class="duke-header">
+    <img src="./lisajfif.jfif">
+    <div>
+      <h2>الدوق ليسا</h2>
+      <span>حاكم نقابات الشرف</span>
+    </div>
+  </div>
+
+  <div class="nawab-box">
+    <h3>👥 النواب</h3>
+    <div class="nawab-grid">
+      <div class="nawab">
+        <img src="./nawab1.jfif">
+        <p>النائب الأول</p>
+      </div>
+      <div class="nawab">
+        <img src="./nawab2.jfif">
+        <p>النائب الثاني</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="na9abat-box">
+    <h3>⚔️ النقابات التابعة</h3>
+    <div class="na9abat">
+      <div class="na9aba">فيلوريا</div>
+    </div>
+  </div>
+</div>
+
+<div class="duke-card">
+  <div class="duke-header">
+    <img src="./gats.jfif">
+    <div>
+      <h2>الدوق غاتس</h2>
+      <span>حاكم نقابات الشرف</span>
+    </div>
+  </div>
+
+  <div class="nawab-box">
+    <h3>👥 النواب</h3>
+    <div class="nawab-grid">
+      <div class="nawab">
+        <img src="./nawab1.jfif">
+        <p>النائب الأول</p>
+      </div>
+      <div class="nawab">
+        <img src="./nawab2.jfif">
+        <p>النائب الثاني</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="na9abat-box">
+    <h3>⚔️ النقابات التابعة</h3>
+    <div class="na9abat">
+      <div class="na9aba">برايم</div>
+    </div>
+  </div>
+</div>
+
+<div class="duke-card">
+  <div class="duke-header">
+    <img src="./Sung Jinwoo.jfif">
+    <div>
+      <h2>الدوق سونغ</h2>
+      <span>حاكم نقابات الشرف</span>
+    </div>
+  </div>
+
+  <div class="nawab-box">
+    <h3>👥 النواب</h3>
+    <div class="nawab-grid">
+      <div class="nawab">
+        <img src="./nawab1.jfif">
+        <p>النائب الأول</p>
+      </div>
+      <div class="nawab">
+        <img src="./nawab2.jfif">
+        <p>النائب الثاني</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="na9abat-box">
+    <h3>⚔️ النقابات التابعة</h3>
+    <div class="na9abat">
+      <div class="na9aba">رايتون</div>
+    </div>
+  </div>
+</div>
+
+<div class="duke-card">
+  <div class="duke-header">
+    <img src="./Toj.jfif">
+    <div>
+      <h2>الدوق شاغر</h2>
+      <span>حاكم نقابات الشرف</span>
+    </div>
+  </div>
+
+  <div class="nawab-box">
+    <h3>👥 النواب</h3>
+    <div class="nawab-grid">
+      <div class="nawab">
+        <img src="./nawab1.jfif">
+        <p>النائب الأول</p>
+      </div>
+      <div class="nawab">
+        <img src="./nawab2.jfif">
+        <p>النائب الثاني</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="na9abat-box">
+    <h3>⚔️ النقابات التابعة</h3>
+    <div class="na9abat">
+      <div class="na9aba">اكاتسكي</div>
+      <div class="na9aba">شيبويا</div>
+    </div>
+  </div>
+</div>
+<!-- زيد دوقات آخرين بنفس الشكل -->
+
+</div>
+
+</body>
+</html>

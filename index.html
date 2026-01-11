@@ -352,6 +352,242 @@
 .na9aba-item a:hover {
     text-decoration: underline;
 }
+#definir {
+  padding: 40px 15px;
+  display: flex;
+  justify-content: center;
+}
+
+.kingdom-def {
+  max-width: 900px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 215, 0, 0.3);
+  border-radius: 20px;
+  padding: 30px;
+  color: #f1f1f1;
+  line-height: 1.9;
+  text-align: center;
+}
+
+.kingdom-def h2 {
+  color: gold;
+  margin-bottom: 20px;
+}
+
+.kingdom-def h3 {
+  color: #ffd700;
+  margin: 25px 0 15px;
+}
+
+.kingdom-def .intro {
+  font-size: 1.05rem;
+}
+
+.highlight {
+  color: gold;
+  font-weight: bold;
+}
+
+.divider {
+  color: gold;
+  margin: 20px 0;
+  letter-spacing: 2px;
+}
+
+.kingdom-def ul {
+  list-style: none;
+  padding: 0;
+  text-align: right;
+}
+
+.kingdom-def ul li {
+  margin: 10px 0;
+  padding-right: 10px;
+}
+
+.contact,
+.final {
+  font-size: 1rem;
+}
+
+.welcome {
+  color: gold;
+  font-weight: bold;
+  display: block;
+  margin-top: 10px;
+}
+
+/* 📱 Responsive */
+@media (max-width: 600px) {
+  .kingdom-def {
+    padding: 20px;
+    font-size: 0.95rem;
+  }
+}
+.kingdom-def {
+  background: rgba(255, 255, 255, 0.08); /* شفافية */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+
+  border-radius: 22px;
+}
+.kingdom-def h2,
+.kingdom-def h3 {
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.4);
+}
+.divider {
+  opacity: 0.85;
+  text-shadow: 0 0 6px rgba(255, 215, 0, 0.5);
+}
+@media (max-width: 600px) {
+  .kingdom-def {
+    backdrop-filter: blur(8px);
+  }
+}
+body {
+  background: linear-gradient(
+    120deg,
+    #0a0a0a,
+    #111827,
+    #1f2933,
+    #0f172a
+  );
+  background-size: 400% 400%;
+  animation: bgMove 18s ease infinite;
+}
+
+@keyframes bgMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image:
+    radial-gradient(1px 1px at 20% 30%, rgba(255,215,0,.8), transparent),
+    radial-gradient(1px 1px at 80% 40%, rgba(255,255,255,.7), transparent),
+    radial-gradient(1px 1px at 60% 70%, rgba(255,215,0,.6), transparent),
+    radial-gradient(1px 1px at 30% 80%, rgba(255,255,255,.6), transparent);
+  animation: stars 30s linear infinite;
+  pointer-events: none;
+  z-index: -1;
+}
+
+@keyframes stars {
+  from { transform: translateY(0); }
+  to   { transform: translateY(-200px); }
+}
+@media (max-width: 600px) {
+  body {
+    animation-duration: 25s;
+  }
+}
+/* الحاوية العامة */
+#a9sam {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* الغريد */
+#a9sam > div {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 25px;
+  max-width: 1100px;
+  width: 100%;
+}
+
+/* الروابط */
+#a9sam a {
+  text-decoration: none;
+}
+
+/* الكارت */
+.card1 {
+  background: linear-gradient(145deg, #020617, #0f172a);
+  border: 1px solid rgba(255, 215, 0, 0.35);
+  border-radius: 18px;
+  padding: 25px 15px;
+  text-align: center;
+  box-shadow: 0 0 30px rgba(255, 215, 0, 0.12);
+  transition: 0.45s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+/* تأثير الإضاءة */
+.card1::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 215, 0, 0.15),
+    transparent
+  );
+  transform: translateX(-100%);
+  transition: 0.6s;
+}
+
+.card1:hover::before {
+  transform: translateX(100%);
+}
+
+/* الصورة */
+.logo1 {
+  width: 70px;
+  height: 70px;
+  margin-bottom: 12px;
+  filter: drop-shadow(0 0 10px rgba(255,215,0,.4));
+}
+
+/* النص */
+.card1 p {
+  color: #facc15;
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-shadow: 0 0 8px rgba(250,204,21,.5);
+}
+
+/* الهوفر */
+.card1:hover {
+  transform: translateY(-10px) scale(1.05);
+  box-shadow: 0 0 45px rgba(255,215,0,.4);
+}
+
+/* كارت مميز (الزر الأخير) */
+.menu-item3 .card1 {
+  background: linear-gradient(145deg, #0f172a, #020617);
+  box-shadow: 0 0 45px rgba(0,255,170,.35);
+  border-color: rgba(0,255,170,.5);
+}
+
+.menu-item3 .card1 p {
+  color: #00ffcc;
+  text-shadow: 0 0 10px rgba(0,255,200,.8);
+}
+
+/* الهاتف */
+@media (max-width: 600px) {
+  .card1 {
+    padding: 20px 10px;
+  }
+
+  .card1 p {
+    font-size: 1rem;
+  }
+}
+
+
+
 
 
     </style>
@@ -362,9 +598,10 @@
     <nav class="nav-container">
         <div style="font-weight: 900; color: var(--primary);">NIVERIA ❄️</div>
         <div class="epic-menu">
-            <a href="login.html" class="menu-item"> حول</a>
-            <a href="news.html" class="menu-item">البارزين</a>
-            <a href="register.html" class="menu-item">رتبتك في نيفيريا</a>
+            <a href="#definir" class="menu-item"> تعريف</a>
+            <a href="#rotab" class="menu-item"> رتب العليا</a>
+            <a href="#a9sam" class="menu-item"> الاقسام</a>
+            <a href="#a9alim" class="menu-item"> الاقاليم</a>
         </div>
     </nav>
 
@@ -372,8 +609,78 @@
         <h1>مملكة نيفيريا</h1>
         <p style="opacity: 0.7; letter-spacing: 2px;">welcome to neveria emprie</p>
     </header>
+    <div id="definir">
+        <section class="kingdom-def">
+  <h2>👑🏰 مملكة نيفيريا الرسمية 🏰👑</h2>
 
-    <section class="rank-section">
+  <p class="intro">
+    مرحباً بكم في <span class="highlight">مملكة نيفيريا</span><br>
+    مملكة بُنيت على أسس الاحترام 🤝، الأخلاق الرفيعة ✨، والتعاون بين جميع الأعضاء 🤍<br>
+    هذه المملكة ليست مجرد مجموعة، بل <strong>عائلة واحدة</strong> يجمعها الود والتقدير 🌹
+  </p>
+
+  <div class="divider">━━━━━━━━━━━━━━</div>
+
+  <h3>📜 دستور المملكة (القوانين)</h3>
+  <ul class="rules">
+    <li>1️⃣ الاحترام المتبادل واجب على الجميع دون استثناء</li>
+    <li>2️⃣ يمنع السب، الشتم، الإهانة أو التقليل من أي عضو 🚫</li>
+    <li>3️⃣ يمنع النقاش في السياسة والدين تفادياً للمشاكل</li>
+    <li>4️⃣ يمنع نشر الروابط أو الإعلانات بدون إذن الإدارة</li>
+    <li>5️⃣ يمنع نشر محتوى غير أخلاقي أو مخالف للآداب العامة</li>
+    <li>6️⃣ الالتزام بموضوع ونظام المملكة</li>
+    <li>7️⃣ قرارات الإدارة نهائية وغير قابلة للنقاش</li>
+  </ul>
+
+  <div class="divider">━━━━━━━━━━━━━━</div>
+
+  <h3>👑 هيكلة المملكة</h3>
+  <ul class="structure">
+    <li>👑 <strong>الملك / الملكة:</strong> صاحب القرار الأعلى</li>
+    <li>⚔️ <strong>المشرفون:</strong> حماة النظام والساهرون على القوانين</li>
+    <li>🤍 <strong>الأعضاء:</strong> أساس المملكة وروحها</li>
+  </ul>
+
+  <div class="divider">━━━━━━━━━━━━━━</div>
+
+  <h3>⚖️ العقوبات</h3>
+  <ul class="punishments">
+    <li>⚠️ تنبيه أول</li>
+    <li>⛔ إنذار رسمي</li>
+    <li>❌ طرد نهائي من المملكة (في حالة التكرار أو المخالفة الكبيرة)</li>
+  </ul>
+
+  <div class="divider">━━━━━━━━━━━━━━</div>
+
+  <h3>🌟 مميزات المملكة</h3>
+  <ul class="features">
+    <li>✨ بيئة آمنة وراقية</li>
+    <li>✨ فعاليات وتفاعل مستمر</li>
+    <li>✨ احترام متبادل بين الجميع</li>
+    <li>✨ إدارة عادلة ومنظمة</li>
+  </ul>
+
+  <div class="divider">━━━━━━━━━━━━━━</div>
+
+  <h3>📩 التواصل مع الإدارة</h3>
+  <p class="contact">
+    في حالة وجود أي مشكلة أو استفسار<br>
+    يرجى التواصل مع أحد المشرفين مباشرة
+  </p>
+
+  <div class="divider">━━━━━━━━━━━━━━</div>
+
+  <h3>🏰 كلمة أخيرة</h3>
+  <p class="final">
+    انضمامك إلينا شرف للمملكة 🤍<br>
+    واحترامك للقوانين يضمن لك مكانة راقية بين أفرادها<br>
+    <span class="welcome">✨ مرحباً بك بين أهل المملكة ✨</span>
+  </p>
+</section>
+
+    </div>
+    <div id="rotab">
+    <section class="rank-section" >
         <h2 style="font-size: 2rem; border-right: 5px solid var(--gold); padding-right: 15px; display: inline-block;">
             الرتب العليا</h2>
         <div class="rank-grid">
@@ -399,6 +706,53 @@
             </div>
         </div>
     </section>
+    </div>
+    <div id="a9sam">
+    <div class="card..">
+            <a href="na9aba1.html">
+                <div class="card1">
+                    <img src="./na9aba.jfif" alt="" class="logo1">
+                    <p>نقابات</p>
+                </div>
+            </a>
+            <a href="kings.html">
+                <div class="card1">
+                    <img src="./king.jfif" alt="" class="logo1">
+                    <p>الملك</p>
+                </div>
+            </a>
+            <a href="doq.html">
+                <div class="card1">
+                    <img src="./doq.jfif" alt="" class="logo1">
+                    <p>دوق</p>
+                </div>
+            </a>
+            <a href="mochrif.html">
+                <div class="card1">
+                    <img src="./mochrif.jfif" alt="" class="logo1">
+                    <p>تطوير مشرف</p>
+                </div>
+            </a>
+            <a href="news.html">
+                <div class="card1">
+                    <img src="./mo3tazil.jfif" alt="" class="logo1">
+                    <p>معتزلين</p>
+                </div>
+            </a>
+            <a href="khabit.html">
+                <div class="card1">
+                    <img src="" alt="" class="logo1">
+                    <p>الخبيث الاعضم</p>
+                </div>
+            </a>
+            <a href="register.html" >  
+                <div class="card1">
+                    <img src="" alt="" class="logo1">
+                    <p>نيفيريا في رتبتك</p>
+                </div>
+            </a>
+    </div>
+    </div>
 
     <section class="regions-container">
         <div style="padding: 0 5%; margin-bottom: 20px;">
