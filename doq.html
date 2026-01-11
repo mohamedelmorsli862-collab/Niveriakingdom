@@ -154,6 +154,99 @@ header p{
     text-align:center;
   }
 }
+
+/* =========================
+   MOBILE OPTIMIZATION
+========================= */
+@media (max-width: 600px){
+
+  /* العنوان */
+  header{
+    padding:50px 15px 25px;
+  }
+
+  header h1{
+    font-size:1.9rem;
+  }
+
+  header p{
+    font-size:14px;
+    line-height:1.6;
+  }
+
+  /* الحاوية */
+  .container{
+    padding:10px;
+  }
+
+  /* بطاقة الدوق */
+  .duke-card{
+    padding:18px;
+    border-radius:20px;
+    margin-bottom:30px;
+  }
+
+  /* رأس الدوق */
+  .duke-header{
+    flex-direction:column;
+    text-align:center;
+    gap:12px;
+  }
+
+  .duke-header img{
+    width:95px;
+    height:95px;
+  }
+
+  .duke-header h2{
+    font-size:1.4rem;
+  }
+
+  .duke-header span{
+    font-size:13px;
+  }
+
+  /* النواب */
+  .nawab-box h3,
+  .na9abat-box h3{
+    font-size:1.05rem;
+    text-align:center;
+  }
+
+  .nawab-grid{
+    grid-template-columns:repeat(2,1fr);
+    gap:12px;
+  }
+
+  .nawab{
+    padding:10px 5px;
+  }
+
+  .nawab img{
+    width:60px;
+    height:60px;
+  }
+
+  .nawab p{
+    font-size:13px;
+  }
+
+  /* النقابات */
+  .na9abat{
+    justify-content:center;
+  }
+
+  .na9aba{
+    font-size:13px;
+    padding:6px 14px;
+  }
+}
+@media(max-width:600px){
+  .duke-card{
+    box-shadow:0 0 20px rgba(250,204,21,.12);
+  }
+}
+
 </style>
 </head>
 
