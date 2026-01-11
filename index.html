@@ -585,6 +585,52 @@ body::before {
     font-size: 1rem;
   }
 }
+/* =====================
+   NAV MOBILE ONLY
+===================== */
+@media (max-width: 768px){
+
+  .nav-container{
+    padding:12px 14px;
+    flex-direction:column;
+    gap:12px;
+    text-align:center;
+  }
+
+  /* Logo / Kingdom name */
+  .nav-container > div:first-child{
+    font-size:1.4rem;
+    letter-spacing:1px;
+  }
+
+  /* Menu container */
+  .epic-menu{
+    width:100%;
+    display:flex;
+    justify-content:space-between;
+    gap:8px;
+  }
+
+  /* Menu links */
+  .menu-item{
+    flex:1;
+    font-size:13px;
+    padding:8px 6px;
+    border-radius:12px;
+    text-align:center;
+    background:rgba(255,255,255,0.04);
+  }
+
+  .menu-item:hover{
+    transform:none;
+  }
+}
+@media (max-width:768px){
+  .menu-item{
+    border:1px solid rgba(212,175,55,.4);
+    color:#facc15;
+  }
+}
 
 
 
