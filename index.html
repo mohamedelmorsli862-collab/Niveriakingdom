@@ -8,6 +8,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&family=Cinzel:wght@700&display=swap"
         rel="stylesheet">
         <link rel="icon" href="./salorya.jfif" type="image/png" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css">
+
     <style>
         :root {
             --primary: #00f2fe;
@@ -487,104 +489,108 @@ body::before {
     animation-duration: 25s;
   }
 }
-/* الحاوية العامة */
+/* ====== الأقسام ====== */
 #a9sam {
-  padding: 60px 20px;
-  display: flex;
-  justify-content: center;
+    padding: 60px 5%;
 }
 
-/* الغريد */
-#a9sam > div {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 25px;
-  max-width: 1100px;
-  width: 100%;
+/* GRID */
+#a9sam .card\.\. {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
 }
 
-/* الروابط */
 #a9sam a {
-  text-decoration: none;
+    text-decoration: none;
+    color: inherit;
 }
 
-/* الكارت */
+/* CARD */
 .card1 {
-  background: linear-gradient(145deg, #020617, #0f172a);
-  border: 1px solid rgba(255, 215, 0, 0.35);
-  border-radius: 18px;
-  padding: 25px 15px;
-  text-align: center;
-  box-shadow: 0 0 30px rgba(255, 215, 0, 0.12);
-  transition: 0.45s ease;
-  position: relative;
-  overflow: hidden;
+    background: rgba(15, 23, 42, 0.85);
+    border: 1px solid rgba(0, 242, 254, 0.25);
+    border-radius: 30px;
+    padding: 35px 20px;
+    text-align: center;
+    backdrop-filter: blur(12px);
+    transition: 0.4s ease;
+    opacity: 0;
+    transform: translateY(40px) scale(0.95);
 }
 
-/* تأثير الإضاءة */
-.card1::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    120deg,
-    transparent,
-    rgba(255, 215, 0, 0.15),
-    transparent
-  );
-  transform: translateX(-100%);
-  transition: 0.6s;
-}
-
-.card1:hover::before {
-  transform: translateX(100%);
-}
-
-/* الصورة */
-.logo1 {
-  width: 70px;
-  height: 70px;
-  margin-bottom: 12px;
-  filter: drop-shadow(0 0 10px rgba(255,215,0,.4));
-}
-
-/* النص */
-.card1 p {
-  color: #facc15;
-  font-size: 1.1rem;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-shadow: 0 0 8px rgba(250,204,21,.5);
-}
-
-/* الهوفر */
+/* HOVER */
 .card1:hover {
-  transform: translateY(-10px) scale(1.05);
-  box-shadow: 0 0 45px rgba(255,215,0,.4);
+    transform: translateY(-10px) scale(1.03);
+    border-color: #00f2fe;
+    box-shadow: 0 0 35px rgba(0, 242, 254, 0.35);
 }
 
-/* كارت مميز (الزر الأخير) */
-.menu-item3 .card1 {
-  background: linear-gradient(145deg, #0f172a, #020617);
-  box-shadow: 0 0 45px rgba(0,255,170,.35);
-  border-color: rgba(0,255,170,.5);
+/* ICON */
+.icon-circle {
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+    border-radius: 28px; /* قريب للدائرة */
+    background: radial-gradient(circle at top, #1e293b, #020617);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid #00f2fe;
+    box-shadow: 0 0 25px rgba(0,242,254,0.35);
 }
 
-.menu-item3 .card1 p {
-  color: #00ffcc;
-  text-shadow: 0 0 10px rgba(0,255,200,.8);
+.icon-circle i {
+    font-size: 36px;
+    color: #ffcc33;
 }
 
-/* الهاتف */
+/* TITLE */
+.card1 h3 {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+    color: #00f2fe;
+    font-weight: 900;
+}
+
+/* TEXT */
+.card1 p {
+    font-size: 0.9rem;
+    opacity: 0.75;
+    line-height: 1.6;
+}
+
+/* ANIMATION ACTIVE */
+.card1.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+/* 📱 الهاتف: جوج حداهُم */
 @media (max-width: 600px) {
-  .card1 {
-    padding: 20px 10px;
-  }
+    #a9sam .card\.\. {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
 
-  .card1 p {
-    font-size: 1rem;
-  }
+    .icon-circle {
+        width: 75px;
+        height: 75px;
+    }
+
+    .icon-circle i {
+        font-size: 28px;
+    }
+
+    .card1 h3 {
+        font-size: 1rem;
+    }
+
+    .card1 p {
+        font-size: 0.8rem;
+    }
 }
+
 /* =====================
    NAV MOBILE ONLY
 ===================== */
@@ -631,6 +637,302 @@ body::before {
     color:#facc15;
   }
 }
+/* ===== COLORS PER CARD ===== */
+
+/* نقابات – أزرق سماوي */
+.na9abat {
+  --c: #00f2fe;
+}
+
+/* الملك – ذهبي */
+.king {
+  --c: #ffcc33;
+}
+
+/* دوق – بنفسجي ملكي */
+.duke {
+  --c: #a855f7;
+}
+
+/* مشرف – أخضر تقني */
+.admin {
+  --c: #22c55e;
+}
+
+/* معتزلين – رمادي هادئ */
+.retired {
+  --c: #94a3b8;
+}
+
+/* الخبيث – أحمر دموي */
+.evil {
+  --c: #ef4444;
+}
+
+/* الرتبة – برتقالي أسطوري */
+.rank {
+  --c: #fb923c;
+}
+
+/* ===== APPLY COLOR ===== */
+.card1 {
+  border: 1px solid color-mix(in srgb, var(--c) 40%, transparent);
+}
+
+.card1:hover {
+  box-shadow: 0 0 35px color-mix(in srgb, var(--c) 60%, transparent);
+  border-color: var(--c);
+}
+
+.card1 h3 {
+  color: var(--c);
+}
+
+.card1 .icon-circle {
+  border-color: var(--c);
+  box-shadow: 0 0 25px color-mix(in srgb, var(--c) 70%, transparent);
+}
+
+.card1 .icon-circle i {
+  color: var(--c);
+}
+
+/* ===== SECTION ===== */
+#rotab {
+  padding: 60px 20px;
+}
+
+.rank-title {
+  font-size: 2rem;
+  border-right: 5px solid var(--gold);
+  padding-right: 15px;
+  display: inline-block;
+  margin-bottom: 40px;
+}
+
+/* ===== GRID ===== */
+.rank-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+}
+
+/* ===== CARD ===== */
+.rank-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 215, 0, 0.25);
+  border-radius: 18px;
+  padding: 20px;
+  backdrop-filter: blur(6px);
+  transition: 0.3s ease;
+}
+
+.rank-card:hover {
+  box-shadow: 0 0 35px rgba(255, 215, 0, 0.25);
+  transform: translateY(-6px);
+}
+
+/* ===== TOP ===== */
+.rank-top {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+
+.rank-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+}
+
+/* ===== INFO ===== */
+.rank-role {
+  font-size: 12px;
+  opacity: 0.6;
+}
+
+.rank-name {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--gold);
+}
+
+/* ===== TAGS ===== */
+.rank-tags {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.rank-tag {
+  flex: 1;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 215, 0, 0.12);
+  border: 1px solid rgba(255, 215, 0, 0.4);
+}
+
+/* ===== DESCRIPTION ===== */
+.rank-desc {
+  min-height: 60px;
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 1.6;
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 600px) {
+  .rank-top {
+    flex-direction: row-reverse;
+  }
+}
+:root {
+  --gold: #FFD700;
+  --card-bg: rgba(30, 60, 150, 0.2); /* bleu clair */
+  --card-border: rgba(0, 120, 255, 0.4); /* bleu border */
+  --tag-bg: rgba(0, 120, 255, 0.15);
+  --tag-border: rgba(0, 120, 255, 0.4);
+}
+
+/* Section background */
+#rotab {
+  background-size: cover;
+  padding: 40px 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+#rotab::before {
+  content: "❄️";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 2rem;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+/* Grid container */
+.rank-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Card */
+.rank-card {
+  max-width: 260px;
+  width: 100%;
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 14px;
+  transition: 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+  text-align: center;
+}
+
+/* Hover animation */
+.rank-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 0 20px rgba(0, 120, 255, 0.6);
+  background: rgba(0, 120, 255, 0.3);
+  border-color: rgba(0, 180, 255, 0.7);
+}
+
+/* Top */
+.rank-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.rank-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  object-fit: cover;
+}
+
+/* Info */
+.rank-role {
+  font-size: 12px;
+  opacity: 0.6;
+  margin-top: 6px;
+  color: #cce0ff;
+}
+
+.rank-name {
+  font-size: 1.3rem;
+  font-weight: 900;
+  color: #e0f7ff;
+  margin-top: 2px;
+}
+
+/* Tags */
+.rank-tags {
+  display: flex;
+  gap: 6px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+.rank-tag {
+  padding: 4px 10px;
+  font-size: 11px;
+  border-radius: 6px;
+  background: var(--tag-bg);
+  border: 1px solid var(--tag-border);
+  color: #e0f7ff;
+}
+
+/* Description */
+.rank-desc {
+  margin-top: 10px;
+  font-size: 12px;
+  opacity: 0.7;
+  color: #cce0ff;
+}
+
+/* Section Title */
+.rank-section h2 {
+  font-size: 2rem;
+  border-right: 5px solid #00aaff;
+  padding-right: 15px;
+  display: inline-block;
+  margin-bottom: 20px;
+  color: #e0f7ff;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+  .rank-card {
+    max-width: 45%;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .rank-card {
+    max-width: 90%;
+  }
+
+  .rank-top {
+    flex-direction: column;
+  }
+
+  .rank-img {
+    width: 70px;
+    height: 70px;
+  }
+}
+
 
 
 
@@ -729,76 +1031,161 @@ body::before {
     <section class="rank-section" >
         <h2 style="font-size: 2rem; border-right: 5px solid var(--gold); padding-right: 15px; display: inline-block;">
             الرتب العليا</h2>
-        <div class="rank-grid">
-            <div class="rank-card rank-founder">
-                <img src="https://files.catbox.moe/i6oi0l.jpg" class="rank-img">
-                <div style="font-size: 12px; opacity: 0.6;">المؤوسس</div>
-                <div class="rank-name" style="font-size: 1.5rem; font-weight: 900;">غيو</div>
-            </div>
-            <div class="rank-card">
-                <img src="https://files.catbox.moe/6ze0tp.jpg" class="rank-img">
-                <div style="font-size: 12px; opacity: 0.6;"> نائبة المؤسس</div>
-                <div class="rank-name" style="font-size: 1.5rem; font-weight: 900;">هيستوريا</div>
-            </div>
-            <div class="rank-card">
-                <img src="https://files.catbox.moe/wm3l5k.jpg" class="rank-img">
-                <div style="font-size: 12px; opacity: 0.6;">اللورد</div>
-                <div class="rank-name" style="font-size: 1.5rem; font-weight: 900;">ميغومي</div>
-            </div>
-            <div class="rank-card">
-                <img src="./thorfine.jfif" class="rank-img">
-                <div style="font-size: 12px; opacity: 0.6;">المستشار</div>
-                <div class="rank-name" style="font-size: 1.5rem; font-weight: 900;">ثورفين</div>
-            </div>
-        </div>
+       <div class="rank-grid">
+
+  <!-- Founder Card -->
+  <div class="rank-card rank-founder">
+    <div class="rank-top">
+      <img src="https://files.catbox.moe/i6oi0l.jpg" class="rank-img">
+      <div class="rank-info">
+        <div class="rank-role">المؤسس</div>
+        <div class="rank-name">غيو</div>
+      </div>
+    </div>
+    <div class="rank-tags">
+      <span class="rank-tag">قائد</span>
+      <span class="rank-tag">أسطورة</span>
+    </div>
+    <div class="rank-desc">
+      قوي ما يأتي مرتين..
+    </div>
+  </div>
+
+  <!-- Vice Founder Card -->
+  <div class="rank-card">
+    <div class="rank-top">
+      <img src="https://files.catbox.moe/6ze0tp.jpg" class="rank-img">
+      <div class="rank-info">
+        <div class="rank-role">نائبة المؤسس</div>
+        <div class="rank-name">هيستوريا</div>
+      </div>
+    </div>
+    <div class="rank-tags">
+      <span class="rank-tag">قائد</span>
+      <span class="rank-tag">ذكاء</span>
+    </div>
+    <div class="rank-desc">
+      دومًا مثال للتفاني..
+    </div>
+  </div>
+
+  <!-- Lord Card -->
+  <div class="rank-card">
+    <div class="rank-top">
+      <img src="https://files.catbox.moe/wm3l5k.jpg" class="rank-img">
+      <div class="rank-info">
+        <div class="rank-role">اللورد</div>
+        <div class="rank-name">ميغومي</div>
+      </div>
+    </div>
+    <div class="rank-tags">
+      <span class="rank-tag">محارب</span>
+      <span class="rank-tag">الارادة </span>
+    </div>
+    <div class="rank-desc">
+      حامي المملكة بقوة..
+    </div>
+  </div>
+
+  <!-- Advisor Card -->
+  <div class="rank-card">
+    <div class="rank-top">
+      <img src="./thorfine.jfif" class="rank-img">
+      <div class="rank-info">
+        <div class="rank-role">المستشار</div>
+        <div class="rank-name">ثورفين</div>
+      </div>
+    </div>
+    <div class="rank-tags">
+      <span class="rank-tag">حكيم</span>
+      <span class="rank-tag">مخطط</span>
+    </div>
+    <div class="rank-desc">
+      العقل المدبر وراء كل خطة..
+    </div>
+  </div>
+
+</div>
     </section>
     </div>
     <div id="a9sam">
-    <div class="card..">
-            <a href="na9aba1.html">
-                <div class="card1">
-                    <img src="./na9aba.jfif" alt="" class="logo1">
-                    <p>نقابات</p>
-                </div>
-            </a>
-            <a href="kings.html">
-                <div class="card1">
-                    <img src="./king.jfif" alt="" class="logo1">
-                    <p>الملك</p>
-                </div>
-            </a>
-            <a href="doq.html">
-                <div class="card1">
-                    <img src="./doq.jfif" alt="" class="logo1">
-                    <p>دوق</p>
-                </div>
-            </a>
-            <a href="mochrif.html">
-                <div class="card1">
-                    <img src="./mochrif.jfif" alt="" class="logo1">
-                    <p>تطوير مشرف</p>
-                </div>
-            </a>
-            <a href="news.html">
-                <div class="card1">
-                    <img src="./mo3tazil.jfif" alt="" class="logo1">
-                    <p>معتزلين</p>
-                </div>
-            </a>
-            <a href="khabit.html">
-                <div class="card1">
-                    <img src="" alt="" class="logo1">
-                    <p>الخبيث الاعضم</p>
-                </div>
-            </a>
-            <a href="register.html" >  
-                <div class="card1">
-                    <img src="" alt="" class="logo1">
-                    <p>نيفيريا في رتبتك</p>
-                </div>
-            </a>
-    </div>
-    </div>
+      <h2 style="font-size: 2rem; border-right: 5px solid var(--gold); padding-right: 15px; display: inline-block; ">
+            اقسام ريفينيا </h2>
+  <div class="card..">
+
+    <a href="na9aba1.html">
+      <div class="card1 na9abat">
+        <div class="icon-circle">
+          <i class="fa-solid fa-shield-halved"></i>
+        </div>
+        <h3>نقابات</h3>
+        <p>هنا تستكشف نقابات ريفينيا</p>
+      </div>
+    </a>
+
+    <a href="kings.html">
+      <div class="card1 king">
+        <div class="icon-circle">
+          <i class="fa-solid fa-crown"></i>
+        </div>
+        <h3>الملك</h3>
+        <p>تعرف على الملك و شعارات نقاباته</p>
+      </div>
+    </a>
+
+    <a href="doq.html">
+      <div class="card1 duke">
+        <div class="icon-circle">
+          <i class="fa-solid fa-chess"></i>
+        </div>
+        <h3>دوق</h3>
+        <p>دوقات رسميين للمملكة</p>
+      </div>
+    </a>
+
+    <a href="mochrif.html">
+      <div class="card1 admin">
+        <div class="icon-circle">
+          <i class="fa-solid fa-gear"></i>
+        </div>
+        <h3>تطوير مشرف</h3>
+        <p>كيفية تطوير مشرف من ناحية نشر و إدارة</p>
+      </div>
+    </a>
+
+    <a href="news.html">
+      <div class="card1 retired">
+        <div class="icon-circle">
+          <i class="fa-solid fa-user-xmark"></i>
+        </div>
+        <h3>معتزلين</h3>
+        <p>نخبة نيفيريا</p>
+      </div>
+    </a>
+
+    <a href="khabit.html">
+      <div class="card1 evil">
+        <div class="icon-circle">
+          <i class="fa-solid fa-skull"></i>
+        </div>
+        <h3>الخبيث الأعظم</h3>
+        <p>تعرف على خائن من لا شيء</p>
+      </div>
+    </a>
+
+    <a href="register.html">
+      <div class="card1 rank">
+        <div class="icon-circle">
+          <i class="fa-solid fa-medal"></i>
+        </div>
+        <h3>نيفيريا في رتبتك</h3>
+        <p>أجب على الأسئلة لتعرف رتبتك</p>
+      </div>
+    </a>
+
+  </div>
+</div>
+
     <div id="a9alim">
 
     <section class="regions-container">
@@ -1017,6 +1404,17 @@ body::before {
     </div>
 
     <script>
+      const cards = document.querySelectorAll(".card1");
+
+const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add("show");
+        }
+    });
+}, { threshold: 0.2 });
+
+cards.forEach(card => observer.observe(card));
         function showRegion(regionName, kingName, kingImg, dukes){
     document.getElementById('modalTitle').innerText = "إقليم " + regionName;
     document.getElementById('modalKing').innerText = "بإمرة الملك: " + kingName;
