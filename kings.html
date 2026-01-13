@@ -16,14 +16,39 @@
 
 body{
     background:#000;
-    min-height:100vh;
-    padding:60px 0;
-    display:flex;
-    flex-direction:column;
-    align-items:center;
+    position:relative;
+    overflow-x:hidden;
 }
 
+/* TITLE */
+.title-box{
+    width:100%;
+    text-align:center;
+    margin-bottom:50px;
+    animation:titleFade 1.2s ease forwards;
+}
 
+.title-box h1{
+    font-size:46px;
+    color:gold;
+    letter-spacing:3px;
+    text-shadow: 0 0 10px gold, 0 0 25px rgba(255,215,0,0.8);
+}
+
+.title-box p{
+    color:#aaa;
+    font-size:18px;
+    letter-spacing:1px;
+    margin-top:8px;
+}
+
+.line{
+    width:220px;
+    height:3px;
+    margin:10px auto;
+    background:linear-gradient(90deg, transparent, #00ff99, transparent);
+    box-shadow:0 0 15px #00ff99;
+}
 
 /* GRID */
 .container{
@@ -44,18 +69,22 @@ body{
     transform: translateY(40px);
     opacity:0;
     animation: fadeUp 1s ease forwards;
+    transition:0.5s;
 }
 
 /* animation delay */
 .card:nth-child(1){animation-delay:0.2s}
 .card:nth-child(2){animation-delay:0.4s}
 .card:nth-child(3){animation-delay:0.6s}
+.card:nth-child(4){animation-delay:0.8s}
+.card:nth-child(5){animation-delay:1s}
 
 /* background image */
 .card::before{
     content:"";
     position:absolute;
     inset:0;
+    background-image: var(--bg);
     background-size:cover;
     background-position:center;
     filter:brightness(0.25) blur(2px);
@@ -114,12 +143,6 @@ body{
     color:gold;
 }
 
-/* crown */
-.crown{
-    font-size:32px;
-    margin:5px 0;
-}
-
 /* icons */
 .icons{
     margin-top:15px;
@@ -145,7 +168,7 @@ body{
     box-shadow:0 0 30px #00ff99;
 }
 
-/* animation */
+/* animations */
 @keyframes fadeUp{
     to{
         transform:translateY(0);
@@ -153,42 +176,6 @@ body{
     }
 }
 
-/* TITLE */
-/* TITLE */
-.title-box{
-    width:100%;
-    text-align:center;
-    margin-bottom:50px;
-    animation:titleFade 1.2s ease forwards;
-}
-
-
-.title-box h1{
-    font-size:46px;
-    color:gold;
-    letter-spacing:3px;
-    text-shadow:
-        0 0 10px gold,
-        0 0 25px rgba(255,215,0,0.8);
-    margin:10px 0;
-}
-
-.title-box p{
-    color:#aaa;
-    font-size:18px;
-    letter-spacing:1px;
-}
-
-/* decorative line */
-.line{
-    width:220px;
-    height:3px;
-    margin:10px auto;
-    background:linear-gradient(90deg, transparent, #00ff99, transparent);
-    box-shadow:0 0 15px #00ff99;
-}
-
-/* animation */
 @keyframes titleFade{
     from{
         opacity:0;
@@ -204,73 +191,315 @@ body{
    MOBILE RESPONSIVE
 ========================= */
 @media (max-width: 768px){
-
-    body{
-        padding:40px 0;
-    }
-
-    /* title */
-    .title-box h1{
-        font-size:32px;
-        letter-spacing:2px;
-    }
-
-    .title-box p{
-        font-size:15px;
-    }
-
-    .line{
-        width:150px;
-    }
-
-    /* cards layout */
-    .container{
-        width:92%;
-        grid-template-columns:1fr;
-        gap:30px;
-    }
-
-    /* card size */
-    .card{
-        height:400px;
-    }
-
-    /* avatar */
-    .avatar{
-        width:120px;
-        height:120px;
-    }
-
-    .name{
-        font-size:22px;
-    }
-
-    .icons{
-        font-size:18px;
-    }
+    body{padding:40px 20px;}
+    .title-box h1{font-size:32px;}
+    .title-box p{font-size:15px;}
+    .line{width:150px;}
+    .container{grid-template-columns:1fr; gap:30px;}
+    .card{height:400px;}
+    .avatar{width:120px; height:120px;}
+    .name{font-size:22px;}
+    .icons{font-size:18px;}
+}
+/* =========================
+   Snowfall CSS
+========================= */
+/* =========================
+   Snowfall CSS + Cards
+========================= */
+body{
+    background:#000;
+    font-family:'Cairo', sans-serif;
+    margin:0;
+    padding:60px 20px;
+    overflow-x:hidden;
+    position:relative;
 }
 
+.snow-container{
+    position:absolute;
+    inset:0;
+    pointer-events:none;
+    z-index:0;
+}
+
+/* Snowflake common */
+.snowflake{
+    position:absolute;
+    top:-10px;
+    background:white;
+    border-radius:50%;
+    opacity:0.8;
+    pointer-events:none;
+    z-index:0;
+}
+
+/* container and cards on top */
+.container, .title-box, .card{
+    position:relative;
+    z-index:1;
+}
+
+/* Grid and Cards */
+.container{
+    width:90%;
+    display:grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap:35px;
+}
+
+/* Card styling (same as before) */
+.card{
+    height:420px;
+    border-radius:22px;
+    position:relative;
+    overflow:hidden;
+    border:2px solid #00ff99;
+    box-shadow:0 0 25px rgba(0,255,153,0.3);
+    transform: translateY(40px);
+    opacity:0;
+    animation: fadeUp 1s ease forwards;
+    transition:0.5s;
+}
+.card:nth-child(1){animation-delay:0.2s;}
+.card:nth-child(2){animation-delay:0.4s;}
+.card:nth-child(3){animation-delay:0.6s;}
+.card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 45px rgba(0,255,153,0.8);
+}
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background-image: var(--bg);
+    background-size:cover;
+    background-position:center;
+    filter:brightness(0.25) blur(2px);
+    transform:scale(1.1);
+    transition:0.6s;
+}
+.card:hover::before{
+    filter:brightness(0.45) blur(0);
+    transform:scale(1.2);
+}
+.overlay{
+    position:absolute;
+    inset:0;
+    background:linear-gradient(to top, #000 25%, transparent);
+    z-index:1;
+}
+.content{
+    position:relative;
+    z-index:2;
+    text-align:center;
+    padding-top:30px;
+}
+.avatar{
+    width:140px;
+    height:140px;
+    border-radius:50%;
+    margin:0 auto 15px;
+    overflow:hidden;
+    border:5px solid gold;
+    box-shadow:0 0 30px gold;
+    transition:0.5s;
+}
+.card:hover .avatar{transform:scale(1.1) rotate(2deg);}
+.avatar img{width:100%;height:100%;object-fit:cover;}
+.name{font-size:26px;font-weight:700;color:gold;}
+.icons{margin-top:15px;font-size:20px;color:#eee;line-height:1.7;}
+.king{border-color:gold;box-shadow:0 0 40px rgba(255,215,0,0.6);}
+.king .avatar{border-color:#00ff99; box-shadow:0 0 30px #00ff99;}
+@keyframes fadeUp{to{transform:translateY(0);opacity:1;}}
+
+/* TITLE */
+.title-box{width:100%; text-align:center; margin-bottom:50px;}
+.title-box h1{font-size:46px; color:gold; letter-spacing:3px; text-shadow:0 0 10px gold, 0 0 25px rgba(255,215,0,0.8);}
+.title-box p{color:#aaa;font-size:18px;letter-spacing:1px;margin-top:8px;}
+.line{width:220px;height:3px;margin:10px auto;background:linear-gradient(90deg, transparent, #00ff99, transparent);box-shadow:0 0 15px #00ff99;}
+
+/* Responsive */
+@media (max-width:768px){.container{grid-template-columns:1fr;gap:30px;}.card{height:400px;}.avatar{width:120px;height:120px;}.name{font-size:22px;}.icons{font-size:18px;}}
+
+:root {
+    --primary: #00aaff; /* اللون الرئيسي للنص */
+}
+
+/* Nav container */
+.nav-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 30px;
+    background: rgba(0,0,0,0.7); /* شوية شفاف */
+    backdrop-filter: blur(10px); /* تأثير glassmorphism */
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    font-family: 'Cairo', sans-serif;
+}
+
+/* اسم المملكة */
+.nav-container > div:first-child {
+    font-size: 1.5rem;
+    font-weight: 900;
+    color: var(--primary);
+    letter-spacing: 1px;
+}
+
+/* Epic menu */
+.epic-menu {
+    display: flex;
+    gap: 20px;
+}
+
+/* Menu items */
+.menu-item {
+    text-decoration: none;
+    font-weight: 600;
+    color: #fff;
+    padding: 8px 15px;
+    border-radius: 8px;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+/* Hover effect */
+.menu-item::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.menu-item:hover::after {
+    width: 100%;
+}
+
+.menu-item:hover {
+    color: var(--primary);
+    background: rgba(0,170,255,0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .nav-container {
+        flex-direction: column;
+        gap: 10px;
+        padding: 10px 20px;
+    }
+    .epic-menu {
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+.developer-badge {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            /* يمكنك تغييرها إلى right إذا أردت */
+            background: rgba(15, 23, 42, 0.6);
+            /* زجاجي داكن */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            padding: 8px 15px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 9999;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .developer-badge:hover {
+            transform: translateY(-5px) scale(1.05);
+            border-color: #00f2fe;
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.2);
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        .developer-badge .text {
+            font-family: 'Cinzel', serif;
+            /* أو أي خط تفضله */
+            font-size: 11px;
+            color: #fff;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+        }
+
+        .developer-badge .code-icon {
+            color: #00f2fe;
+            font-weight: 900;
+            font-family: monospace;
+            font-size: 14px;
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .back {
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 30px;
+            border: 1px solid #00f2fe;
+            color: #00f2fe;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            background: rgba(0, 242, 254, 0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        .back:hover {
+            background: #00f2fe;
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+        }
 
 </style>
 </head>
+<nav class="nav-container">
+        <div style="font-weight: 900; color: var(--primary);">NIVERIA ❄️</div>
+        <div class="epic-menu">
+            <a href="./index.html" class="menu-item"> رجوع الى المملكة</a>
+        </div>
+    </nav>
 
 <body>
+<div class="snow-container"></div>
+
+
     <!-- TITLE SECTION -->
 <div class="title-box">
-    <div class="line"></div>
     <h1>👑 الملوك 👑</h1>
-    <p>حُكّام مملكة نيفيريا العظمى</p>
     <div class="line"></div>
+    <p>حُكّام مملكة نيفيريا العظمى</p>
 </div>
-
 
 <div class="container">
 
     <!-- CARD 1 -->
     <div class="card" style="--bg:url('./itchibi.jfif')">
-        <style>
-            .card:nth-child(1)::before{background-image:url('./itchibi.jfif')}
-        </style>
         <div class="overlay"></div>
         <div class="content">
             <div class="avatar">
@@ -283,9 +512,6 @@ body{
 
     <!-- CARD 2 -->
     <div class="card" style="--bg:url('./subaru.jfif')">
-        <style>
-            .card:nth-child(2)::before{background-image:url('./subaru.jfif')}
-        </style>
         <div class="overlay"></div>
         <div class="content">
             <div class="avatar">
@@ -297,10 +523,7 @@ body{
     </div>
 
     <!-- CARD 3 KING -->
-   <div class="card" style="--bg:url('./misa.jfif')">
-        <style>
-            .card:nth-child(3)::before{background-image:url('./misa.jfif')}
-        </style>
+    <div class="card king" style="--bg:url('./misa.jfif')">
         <div class="overlay"></div>
         <div class="content">
             <div class="avatar">
@@ -311,24 +534,20 @@ body{
         </div>
     </div>
 
-    <div class="card" style="--bg:url('./musachi.jfif')">
-        <style>
-            .card:nth-child(3)::before{background-image:url('./musachi.jfif')}
-        </style>
+    <!-- CARD 4 -->
+    <div class="card" style="--bg:url('./musachi1.jfif')">
         <div class="overlay"></div>
         <div class="content">
             <div class="avatar">
-                <img src="./musachi.jfif">
+                <img src="./musachi1.jfif">
             </div>
             <div class="name">🪐 موساشي</div>
             <div class="icons">🎀 🍁 🌧️ ☘️ 👑</div>
         </div>
     </div>
 
-     <div class="card" style="--bg:url('./Naruto.jfif')">
-        <style>
-            .card:nth-child(3)::before{background-image:url('./Naruto.jfif')}
-        </style>
+    <!-- CARD 5 -->
+    <div class="card" style="--bg:url('./Naruto.jfif')">
         <div class="overlay"></div>
         <div class="content">
             <div class="avatar">
@@ -339,9 +558,46 @@ body{
         </div>
     </div>
 
-    
+</div>
 
 </div>
 
+<a href="#" class="developer-badge">
+            <span class="text"> 𝑲𝒂𝒊𝒓𝒐 – 𝑻𝒐𝒋𝒊 ⛧</span>
+            <span class="code-icon">&lt;/&gt;</span>
+        </a>
+<script>
+    /* =========================
+   JS Snowfall
+========================= */
+const snowContainer = document.querySelector('.snow-container');
+const numFlakes = 100; // عدد الثلوج
+
+for(let i=0; i<numFlakes; i++){
+    const snow = document.createElement('div');
+    snow.classList.add('snowflake');
+    // حجم عشوائي
+    const size = Math.random()*6 + 4; // 4px - 10px
+    snow.style.width = `${size}px`;
+    snow.style.height = `${size}px`;
+    // موقع عشوائي أفقياً
+    snow.style.left = `${Math.random()*100}%`;
+    // سرعة عشوائية
+    const duration = Math.random()*10 + 5; // 5s - 15s
+    snow.style.animation = `fall ${duration}s linear infinite, drift ${duration*0.5}s ease-in-out infinite`;
+    // تأخير عشوائي
+    snow.style.animationDelay = `${Math.random()*10}s, ${Math.random()*10}s`;
+    snowContainer.appendChild(snow);
+}
+
+// Drift keyframes for horizontal movement
+const style = document.createElement('style');
+style.innerHTML = `
+@keyframes fall {0%{transform: translateY(-10px);} 100%{transform: translateY(110vh);}}
+@keyframes drift {0%{transform: translateX(0);}50%{transform: translateX(20px);}100%{transform: translateX(0);}}
+`;
+document.head.appendChild(style);
+
+</script>
 </body>
 </html>

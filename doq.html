@@ -8,7 +8,7 @@
 
 <style>
 :root{
-  --bg:#020617;
+  --bg:#2f46a8;
   --card:#0f172a;
   --gold:#facc15;
   --soft:#94a3b8;
@@ -47,13 +47,26 @@ header p{
 
 /* ===== بطاقة الدوق ===== */
 .duke-card{
-  background:linear-gradient(145deg,#020617,#0f172a);
-  border:1px solid rgba(250,204,21,.3);
-  border-radius:25px;
-  padding:25px;
-  margin-bottom:40px;
-  box-shadow:0 0 40px rgba(250,204,21,.15);
+  background: linear-gradient(145deg, #020617, #0f172a);
+  border: 1px solid rgba(30, 92, 228, 0.3);
+  border-radius: 25px;
+  padding: 25px;
+  margin-bottom: 40px;
+  box-shadow: 0 0 40px rgba(30, 92, 228, 0.3);
+  transition: 0.5s ease, background-position 0.7s ease;
+  background-size: 200% 200%; /* مهم للتحريك */
+  background-position: left center;
 }
+
+/* Hover effect */
+.duke-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 60px rgba(30, 92, 228, 0.7), 0 0 20px rgba(30, 92, 228, 0.5) inset;
+  border-color: rgba(30, 92, 228, 0.8);
+  background-position: right center; /* حركة gradient */
+}
+
+
 
 /* رأس الدوق */
 .duke-header{
@@ -69,7 +82,7 @@ header p{
   border-radius:50%;
   object-fit:cover;
   border:3px solid var(--gold);
-  box-shadow:0 0 20px rgba(250,204,21,.4);
+  box-shadow:0 0 20px rgba(30, 92, 228, 0.3);
 }
 
 .duke-header h2{
@@ -247,10 +260,190 @@ header p{
   }
 }
 
+
+/* ===== NAVBAR ===== */
+/* ===== NAV CONTAINER ===== */
+.nav-container{
+    position:fixed;
+    top:0;
+    left:0;
+    width:100%;
+    height:70px;
+    background:linear-gradient(135deg,#020617,#0b1220,#0ea5e9);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:0 25px;
+    z-index:999;
+    border-bottom:1px solid rgba(186,230,253,0.25);
+    box-shadow:0 8px 30px rgba(14,165,233,0.35);
+}
+
+/* ===== LOGO ===== */
+.logo{
+    font-size:1.4rem;
+    font-weight:900;
+    letter-spacing:2px;
+    display:flex;
+    align-items:center;
+}
+
+.logo span{
+    background:linear-gradient(
+        90deg,
+        #e0f2fe,
+        #bae6fd,
+        #7dd3fc,
+        #e0f2fe
+    );
+    -webkit-background-clip:text;
+    -webkit-text-fill-color:transparent;
+}
+
+/* ===== MENU ===== */
+.epic-menu{
+    display:flex;
+    gap:15px;
+}
+
+.menu-item{
+    text-decoration:none;
+    color:#e0f2fe;
+    font-size:14px;
+    padding:8px 18px;
+    border-radius:20px;
+    background:rgba(224,242,254,0.08);
+    border:1px solid rgba(125,211,252,0.5);
+    transition:all 0.35s ease;
+    backdrop-filter:blur(6px);
+}
+
+/* ❄️ Hover جليدي */
+.menu-item:hover{
+    color:white;
+    background:linear-gradient(
+        135deg,
+        rgba(125,211,252,0.35),
+        rgba(186,230,253,0.25)
+    );
+    box-shadow:
+        0 0 12px rgba(125,211,252,0.6),
+        0 0 25px rgba(186,230,253,0.4);
+    transform:translateY(-2px);
+}
+
+/* ===== MOBILE ===== */
+@media (max-width:600px){
+    .nav-container{
+        height:60px;
+        padding:0 15px;
+    }
+
+    .logo{
+        font-size:1.1rem;
+    }
+
+    .menu-item{
+        font-size:13px;
+        padding:6px 14px;
+    }
+}
+
+/* ===== BODY OFFSET ===== */
+body{
+    padding-top:80px;
+    background:#020617;
+}
+.developer-badge {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            /* يمكنك تغييرها إلى right إذا أردت */
+            background: rgba(15, 23, 42, 0.6);
+            /* زجاجي داكن */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            padding: 8px 15px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 9999;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .developer-badge:hover {
+            transform: translateY(-5px) scale(1.05);
+            border-color: #00f2fe;
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.2);
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        .developer-badge .text {
+            font-family: 'Cinzel', serif;
+            /* أو أي خط تفضله */
+            font-size: 11px;
+            color: #fff;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+        }
+
+        .developer-badge .code-icon {
+            color: #00f2fe;
+            font-weight: 900;
+            font-family: monospace;
+            font-size: 14px;
+            animation: blink 2s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            100% {
+                opacity: 1;
+            }
+
+            50% {
+                opacity: 0.3;
+            }
+        }
+
+        .back {
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 30px;
+            border: 1px solid #00f2fe;
+            color: #00f2fe;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            background: rgba(0, 242, 254, 0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        .back:hover {
+            background: #00f2fe;
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+        }
+
 </style>
 </head>
 
 <body>
+
+  <nav class="nav-container">
+    <div class="logo">
+        ❄️ <span>NIVERIA</span>
+    </div>
+    <div class="epic-menu">
+        <a href="./index.html" class="menu-item">رجوع إلى المملكة</a>
+        
+    </div>
+</nav>
+
 
 <header>
   <h1>🏰 دوقات المملكة 🏰</h1>
@@ -728,7 +921,10 @@ header p{
   </div>
 </div>
 <!-- زيد دوقات آخرين بنفس الشكل -->
-
+  <a href="#" class="developer-badge">
+            <span class="text"> 𝑲𝒂𝒊𝒓𝒐 – 𝑻𝒐𝒋𝒊 ⛧</span>
+            <span class="code-icon">&lt;/&gt;</span>
+        </a>
 </div>
 
 </body>
