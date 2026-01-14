@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>نقابات نيفيريا</title>
+
+    <style>
+     @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@600;900&display=swap');
+
+*{
+    box-sizing:border-box;
+}
+
+body{
+    margin:0;
+    font-family:'Cairo', sans-serif;
+    background:
+      radial-gradient(circle at top, #0f2b4f, #050914 70%),
+      url("https://www.transparenttextures.com/patterns/stardust.png");
+    color:#dff3ff;
+    min-height:100vh;
+}
+
+/* ===== NAVBAR ===== */
+.nav-container{
+    position:sticky;
+    top:0;
+    z-index:999;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:15px 40px;
+    background:rgba(10,30,60,0.6);
+    backdrop-filter: blur(14px);
+    border-bottom:1px solid rgba(150,220,255,0.2);
+}
+
+.logo{
+    font-size:26px;
+    font-weight:900;
+    color:#9fdcff;
+    text-shadow:0 0 10px #6ecbff;
+}
+
+.menu-item{
+    text-decoration:none;
+    color:#bfe9ff;
+    font-weight:bold;
+}
+
+/* ===== TITLES ===== */
+.main-title{
+    text-align:center;
+    margin:50px 0;
+    font-size:36px;
+    color:#9fdcff;
+    text-shadow:0 0 20px rgba(120,200,255,0.6);
+}
+
+/* ===== CARDS GRID ===== */
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+    gap:30px;
+    padding:0 60px 80px;
+}
+
+/* ===== CARD ===== */
+.card{
+    height:240px;
+    border-radius:22px;
+    background:
+      linear-gradient(to top, rgba(5,10,30,0.85), rgba(5,10,30,0.3)),
+      var(--bg) center/cover no-repeat;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    box-shadow:0 20px 40px rgba(0,0,0,0.7);
+    transition:0.6s;
+    position:relative;
+    overflow:hidden;
+    animation: fadeUp 1s ease forwards;
+}
+
+/* Glow effect */
+.card::before{
+    content:"";
+    position:absolute;
+    inset:0;
+    background:radial-gradient(circle at top, rgba(120,200,255,0.25), transparent 60%);
+    opacity:0;
+    transition:0.6s;
+}
+
+.card:hover::before{
+    opacity:1;
+}
+
+.card:hover{
+    transform:translateY(-15px) scale(1.05);
+    box-shadow:0 0 50px rgba(120,200,255,0.6);
+}
+
+/* ===== TEXT ===== */
+.card h2{
+    margin:0;
+    font-size:26px;
+    color:#aee7ff;
+    letter-spacing:1px;
+    text-shadow:0 0 12px rgba(150,220,255,0.8);
+}
+
+.icon{
+    margin-top:10px;
+    font-size:28px;
+    filter: drop-shadow(0 0 8px rgba(180,240,255,0.8));
+}
+
+/* ===== MOTHER GUILD ===== */
+.mother{
+    border:2px solid gold;
+    box-shadow:0 0 60px rgba(255,215,0,0.7);
+}
+
+.mother h2{
+    color:#ffd700;
+    text-shadow:0 0 15px gold;
+}
+
+/* ===== ANIMATION ===== */
+@keyframes fadeUp{
+    from{
+        opacity:0;
+        transform:translateY(40px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+
+    </style>
+</head>
+<body>
+
+<nav class="nav-container">
+    <div style="font-weight:900;">NIVERIA ❄️</div>
+    <a href="./index.html" class="menu-item">رجوع الى المملكة</a>
+</nav>
+
+<h1 class="main-title">تعرف على نقابات نيفيريا العظمى</h1>
+<h3 class="main-title">النقابة الأم</h3>
+
+<div class="cards">
+
+    <!-- النقابة الأم (صورة مختلفة) -->
+    <div class="card mother" style="--bg:url('./Toji.jfif')">
+        <h3>نقابة <span>طوكيو</span></h3>
+        <p><span>⛩️</span></p>
+    </div>
+
+</div>
+
+<h3 class="main-title">باقي النقابات</h3>
+
+<div class="cards">
+
+    <!-- صورة موحدة لباقي النقابات -->
+    <!-- غير بدّل mo3tazil.jfif بالصورة اللي بغيت -->
+
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>ايفرست </h2><span class="icon">🗻</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>ستار </h2><span class="icon">⭐</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>سيلسينا </h2><span class="icon">💎</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>ماكتيفيان </h2><span class="icon">🎐</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>هيروكو </h2><span class="icon">🪶</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>مون </h2><span class="icon">🌑</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>رايتون </h2><span class="icon">⚡</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>برايم </h2><span>♦️</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>يورك </h2><span>🕷️</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>تسونامي </h2><span class="icon">🌊</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>شينغامي </h2><span class="icon">☠️</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>شيبويا </h2><span class="icon">🐦‍🔥</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>ناريا </h2><span class="icon">🔥</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>اسبادا </h2><span class="icon">🌪️</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>تسوكي </h2><span class="icon">⚕️</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>ويسكي </h2><span class="icon">🍷</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>اثينا </h2><span class="icon">🔮</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>دايف </h2><span class="icon">🪼</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>سبارتا </h2><span class="icon">🔱</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>اكاتسكي </h2><span class="icon">⚜️</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>نوفا </h2><span class="icon">🌒</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>سيلفا </h2><span class="icon">💫</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>اوميغا </h2><span class="icon">❄️</span></div>
+    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>كريستال </h2><span class="icon">💎</span></div>
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>ياكوزا</h2><span class="icon">🪽</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>لايت</h2><span class="icon">✨</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>توفانا</h2><span class="icon">💧</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>اكوا</h2><span class="icon">🪻</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>لوريا</h2><span class="icon">🥀</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>الديا</h2><span class="icon">🪽</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>سبايدر</h2><span class="icon">🕸️</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>كلوفر</h2><span class="icon">🍀</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>فونتين</h2><span class="icon">⚖️</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>ارايس</h2><span class="icon">🧣</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>اكليس</h2><span class="icon">🏮</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>فليورا</h2><span class="icon">🪭</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>سيلفر</h2><span class="icon">⚓</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>ستارك</h2><span class="icon">⚔️</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>انتيكا</h2><span class="icon">☕</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>كارتيل</h2><span class="icon">🥂</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>مانهاتن</h2><span class="icon">💧</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>لاو</h2><span class="icon">🐼</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>يوركشن</h2><span class="icon">🔱</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>اوهارا</h2><span class="icon">🛡️</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>الاسكا</h2><span class="icon">⛈️</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>شادو</h2><span class="icon">🌗</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>موسكو</h2><span class="icon">🌨️</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>كاريوكي</h2><span class="icon">🎼</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>اوركا</h2><span class="icon">🐋</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>لايف</h2><span class="icon">🌳</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>أوهايو</h2><span class="icon">♨️</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>هايتي</h2><span class="icon">🌿</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>واندا</h2><span class="icon">🍀</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>ماسادورا</h2><span class="icon">☀️</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>ديفيل</h2><span class="icon">🩸</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>جلاكسي</h2><span class="icon">🪐</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>كراون</h2><span class="icon">👑</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>اليا</h2><span class="icon">🌕</span>
+</div>
+
+<div class="card" style="--bg:url('./mo3tazil.jfif')">
+  <h2>ناتلان</h2><span class="icon">🌋</span>
+</div>
+
+</div>
+
+</body>
+</html>

@@ -330,9 +330,9 @@
         </div>
         
 
-        <button class="ranks-btn" onclick="openRanks()">📜 رتب النقابة</button>
+
         <a href="index.html" class="back">⬅ الرجوع للمملكة</a>
-        <button class="best-btn" onclick="openBest()">⭐ أفضل الأعضاء</button>
+
     </div>
 
     <script>
@@ -364,181 +364,7 @@
             "يورك": { desc: "نقابة النخبة الأولى، تشرف على أخطر المهام داخل المملكة.", leader: "جنرال بطه", img: "./bata.jfif" },
             "ايفرست": { desc: "نقابة النخبة الأولى، تشرف على أخطر المهام داخل المملكة.", leader: "جنرال ماكيما", img: "./Makima.jfif" },
             "ناريا": { desc: "نقابة النخبة الأولى، تشرف على أخطر المهام داخل المملكة.", leader: "جنرال تشيفويو", img: "./chifuyu.jfif" }
-        };
-const afdalMembers = {
-    "برايم": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "توچي", img: "./Toji.jfif" }
-    },
-    "رايتون": {
-        post: { name: "سونغ", img: "./Sung Jinwoo.jfif" },
-        react: { name: "غوكو", img: "./goku.jfif" }
-    },
-    "ايفرست": {
-        post: { name: "بوندرود", img: "./Makima.jfif" },
-        react: { name: "ميتاكا", img: "./mitaka !.jfif" }
-    },
-    "طوكيو": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "فيلورا": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "مانهاتن": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "دايف": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "سبارتا": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "سيلفا": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "شيبويا": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "اكاتسكي": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "ناريا": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "يورك": {
-        post: { name: "يوشيدا", img: "./yochida.jfif" },
-        react: { name: "ايساغي", img: "./isagi.jfif" }
-    },
-    "تسوكي": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "شينغامي": {
-        post: { name: "لايت", img: "./lait.jfif" },
-        react: { name: "اوراهارا", img: "./orahara.jfif" }
-    },
-    "اسبادا": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "اثينا": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "موسكو": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "كاريون": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "كاريوكي": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "نوفا": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "الديا": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "يوركشن": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    },
-    "هيروكو": {
-        post: { name: "ماكيما", img: "./Makima.jfif" },
-        react: { name: "كايدو", img: "./kaido.jfif" }
-    }
-   
-};
-const na9abaRanks = {
-    "ايفرست": [
-        "♛ | ر الجنرال لـ 「ماكي🎀ما」",
-        "❄️ | نائب الجنرال 「ميه⚡وك -باين🍁- بوند رود⛓️」",
-        "❄️ | ر اليونكو لـ 「 」",
-        "❄️ | ر عميد لـ 「ذويل🌸」",
-        "❄️ | ر هاشيرا لـ 「سبيـدرمان🕷️」",
-        "❄️ | ر انبو لـ 「ميتاكا🌸」",
-        "❄️ | ر الهوميز لـ 「أوبياشكي - أكي 」",
-        "❄️ | ر البارون لـ 「مادارا-كاكاشي-ساكورا-ناغي-سوبارو-فيجيتا」",
-        "❄️ | ر مشرف تدريبي لـ 「تودو-غوكو-واغوري-سوكونا-بياكويا-روبين-ميدوريا-كايدو-شو-ال」"
-    ],
 
-    "برايم": [
-        "⌘ | إدارة النقابة",
-        "♛ | الجنرال 「غاتس」",
-        "❄️ | نائب الجنرال 「توچي」",
-        "❄️ | القادة الميدانيون 「—」"
-    ],
-
-    "رايتون": [
-        "⌘ | إدارة النقابة",
-        "♛ | الجنرال 「سونغ」",
-        "❄️ | نائب الجنرال 「غوكو」"
-    ],
-
-        "شينغامي": [
-"⌘￤◞الـࢪتـب اداࢪه الـنـقـابـه ☠️⬐◜",
-"❅￤ ◞الجنــࢪال ⤶ ｢هــ🎀🐥ـيناتـا｣",
-"❅￤ ◞نـــواب الجنــࢪال" ,
-"⤶نار🥷🏻وتو",
-"❅￤ ◞اليونكو ⤶ 「｣◜",
-"❅￤ ◞عـمـيـد ⤶ 「｣◜",
-"❅￤ ◞الهاشيرا ⤶ ｢｣◜",
-"❅￤ ◞الأنبو ⤶ ｢｣",
-"❅￤ ◞الهـوميز ⤶｢اير⚡ين-كانيـ🍯كي｣◜",
-"❅البـاࢪون", 
-"⤶اوراهارا-اللحياء البيضاء-لايت｣◜",
-"❅مشرف تدريبي ⤶-سو💎كونا-كاوروكو-ميليوداس｣◜",
-"⎔⋅• ━ ╼╃ ⌬〔 ❄️ 〕⌬ ╄╾ ━ •⋅⎔",
-"❅￤◞مـــزز شــيــنــيــغــامــي⤶『فـُـؤاد 【ايــانوكـ✦ـوجـي❦🍷﴿❀الــوكــا❀-هيناتا🐥🎀』"
-    ],
-
-    "يورك": [
-"⌘￤◞الـࢪتـب اداࢪه الـنـقـابـه 🌙⬐◜",
-"♛￤ ◞الجنــࢪال ⤶｢العم ايساغي🐦🔥｣◜",
-"❅￤واسـطة من بطـه ｢بطريــ🐧ــقة｣◜",
-"❅￤نائب الجنرال ｢اوبـ🐍ــاناي ـ اوراهـ🫀ـارا ｣◜",
-"❅￤ ◞اليونكو ⤶ 「هـانـ🌚ـجي ـ ميتــ🍡ــسوري｣◜",
-"❅￤ ◞عـمـيـد ⤶ 「ميـ🌸ـكو - كيــ⚡ـــلوا - سانيــ🔪ــمي- توميــ🌊ــوكا-لـ🪐ـانــس ｣◜",
-"❅￤ ◞هاشيرا ⤶ ｢  الـوكـ🔪ـارد - شـيـنـ🦋ـوبو - هـيـنـ🎋ـاتا｣◜",
-"❅￤ ◞انبو ⤶ ｢  - اسـكـ🔥ـانور｣◜",
-"❅￤ ◞الهـوميز ⤶ ｢بـاتـ✨ــشيرا-  مــ🌕ـوزان - يـوشـ⚚ـيـدا｣◜",
-"❅￤ ◞البـاࢪون ⤶ ｢ ｣◜",
-"❅￤ ◞مشرف تدريبي ⤶ 「 هيـ💕ــبارا-يوميـ🍷ــكو- سـ🌼ــاي ｣◜"
-    ],
-
-    "ناريا": [
-"⌘￤◞الـࢪتـب اداࢪه الـنـقـابـه 🏔️⬐◜",
-"♛￤ ◞الجنــࢪال ⤶ ｢ غاتس ⚔️ ｣◜",
-"❅￤نائب الجنرال ｢ استا ☘️ ｣◜",
-"❅￤ ◞اليونكو ⤶ 「｣◜",
-"❅￤ ◞عـمـيـد ⤶ 「｣◜",
-"❅￤ ◞هاشيرا ⤶ ｢ ｣◜",
-"❅￤ ◞انبو ⤶ ｢ ｣◜",
-"❅￤ ◞الهـوميز⤶ ｢ -ريكو🌹 - سوكونا｣◜",
-"❅￤ ◞البـاࢪون ⤶ ｢مادارا ☠️｣◜",
-"❅￤ ◞مشرف تدريبي ⤶ 「 -  ناغومو 🎭-سارادا 🌸 -مروياتي 🍬-ايساغي⚽️ - ｣ ◜"
-    ],
-
-    "رايتون": [
-        "⌘ | إدارة النقابة",
-        "♛ | الجنرال 「سونغ」",
-        "❄️ | نائب الجنرال 「غوكو」"
-    ]
 };
 
 
@@ -564,97 +390,21 @@ const na9abaRanks = {
             document.getElementById("leader").innerText = "غير معروف";
             document.getElementById("logo").style.display = "none";
         }
-        function openRanks() {
-            document.getElementById("ranksModal").style.display = "flex";
-        }
-
-        function closeRanks() {
-            document.getElementById("ranksModal").style.display = "none";
-        }
+        
 
         window.onclick = function (e) {
             const modal = document.getElementById("ranksModal");
             if (e.target === modal) closeRanks();
         };
-        function openBest() {
-    const data = afdalMembers[cleanName];
-
-    if (data) {
-        document.getElementById("bestPostImg").src = data.post.img;
-        document.getElementById("bestPostName").innerText = data.post.name;
-
-        document.getElementById("bestReactImg").src = data.react.img;
-        document.getElementById("bestReactName").innerText = data.react.name;
-    } else {
-        document.getElementById("bestPostImg").style.display = "none";
-        document.getElementById("bestReactImg").style.display = "none";
-        document.getElementById("bestPostName").innerText = "غير محدد";
-        document.getElementById("bestReactName").innerText = "غير محدد";
-    }
-
-    document.getElementById("bestModal").style.display = "flex";
-}
+      
 
 
-        function closeBest() {
-            document.getElementById("bestModal").style.display = "none";
-        }
-        function openRanks(){
-    const list = document.getElementById("ranksList");
-    list.innerHTML = "";
 
-    const ranks = na9abaRanks[cleanName];
-
-    if(ranks){
-        ranks.forEach(rank=>{
-            const div = document.createElement("div");
-            div.className = "rank-item";
-            div.innerText = rank;
-            list.appendChild(div);
-        });
-    }else{
-        list.innerHTML = "<p>لا توجد رتب مسجلة لهذه النقابة.</p>";
-    }
-
-    document.getElementById("ranksModal").style.display = "flex";
-}
-
-function closeRanks(){
-    document.getElementById("ranksModal").style.display = "none";
-}
 
 
     </script>
-    <div class="modal" id="ranksModal">
-    <div class="modal-content">
-        <h2>🏔️ رتب النقابة</h2>
-        <div id="ranksList"></div>
-        <button class="close-btn" onclick="closeRanks()">إغلاق ✖</button>
-    </div>
-</div>
+  
 
-
-    <div class="modal" id="bestModal">
-    <div class="modal-content">
-        <h2>⭐ أفضل الأعضاء</h2>
-
-        <div class="best-card">
-            <img id="bestPostImg">
-            <p><b>أفضل في النشر</b><br>
-                <span id="bestPostName"></span>
-            </p>
-        </div>
-
-        <div class="best-card">
-            <img id="bestReactImg">
-            <p><b>أفضل في التفاعل</b><br>
-                <span id="bestReactName"></span>
-            </p>
-        </div>
-
-        <button class="close-btn" onclick="closeBest()">إغلاق ✖</button>
-    </div>
-</div>
 
     <a href="#" class="developer-badge">
         <span class="text"> 𝑲𝒂𝒊𝒓𝒐 – 𝑻𝒐𝒋𝒊 ⛧</span>
