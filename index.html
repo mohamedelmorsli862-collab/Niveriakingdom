@@ -932,7 +932,316 @@ body::before {
     height: 70px;
   }
 }
+.achievements-list {
+            font-size: 12px;
+            color: #ddd;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            opacity: 0;
+            transform: translateY(20px);
+            transition: 0.4s 0.1s;
+        }
 
+/* إخفاء الإنجازات افتراضياً */
+.rank-card .achievements-list{
+    opacity: 0;
+    transform: translateY(20px);
+    max-height: 0;
+    overflow: hidden;
+    transition: 
+        opacity 0.4s ease,
+        transform 0.4s ease,
+        max-height 0.4s ease;
+}
+
+/* إظهار الإنجازات عند hover */
+.rank-card:hover .achievements-list{
+    opacity: 1;
+    transform: translateY(0);
+    max-height: 300px; /* تقدر تزيرها أو تنقصها */
+}
+/* الصورة مربعة + بدون فراغ */
+.rank-img{
+    width: 100%;
+    height: 220px;          /* تقدر تبدل القياس */
+    object-fit: cover;      /* تقطيع ذكي */
+    border-radius: 10px;    /* ولا 0px إلا بغيتها مربعة بزاف */
+    display: block;
+    margin: 0;
+}
+
+/* حذف أي فراغ فوق الصورة */
+.rank-top{
+    padding: 0;
+    margin: 0;
+    gap: 0;
+}
+
+/* حذف الفراغ فوق النص */
+.rank-info{
+    margin-top: 6px;
+}
+
+/* الكارت كامل بلا فراغ علوي */
+.rank-card{
+    padding-top: 0;
+}
+.rank-img{
+    width: 100%;          /* تاخد العرض كامل */
+    height: 220px;        /* تقدر تبدل الارتفاع */
+    object-fit: cover;    /* الصورة تتقص بشكل ذكي */
+    border-radius: 12px;  /* خليه 0px إلا بغيتها مربعة بزاف */
+    display: block;
+}
+
+/* نحيد أي فراغ فوق الصورة */
+.rank-top{
+    padding: 0;
+    margin: 0;
+    gap: 0;
+}
+
+/* نحيد الفراغ اللي كيكون قبل الصورة */
+.rank-card{
+    padding-top: 0;
+    overflow: hidden; /* باش الصورة ما تخرجش على الكارت */
+}
+/* الكارت ديال المؤسس */
+/* المؤسس */
+.rank-founder{
+    position: relative;
+    border: 2px solid #ff2a2a;
+    background: linear-gradient(
+        135deg,
+        rgba(255,40,40,0.25),
+        rgba(120,0,0,0.4),
+        rgba(255,40,40,0.25)
+    );
+    box-shadow:
+        0 0 30px rgba(255,0,0,0.8),
+        inset 0 0 20px rgba(255,80,80,0.3);
+}
+
+/* هالة نارية */
+.rank-founder::before{
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 16px;
+    background: linear-gradient(45deg, #ff0000, #ff6a00, #ff0000);
+    filter: blur(14px);
+    opacity: 0.55;
+    z-index: -1;
+}
+
+/* صورة المؤسس */
+.rank-founder .rank-img{
+    border: 3px solid #ff2a2a;
+    box-shadow: 0 0 25px rgba(255,0,0,0.9);
+}
+
+/* اسم المؤسس */
+.rank-founder .rank-name{
+    color: #ff3b3b;
+    font-size: 1.7rem;
+    text-shadow:
+        0 0 12px rgba(255,0,0,1),
+        0 0 25px rgba(255,80,80,0.8);
+}
+
+/* الدور */
+.rank-founder .rank-role{
+    color: #ffb3b3;
+    letter-spacing: 1px;
+    font-weight: 900;
+}
+
+/* Hover */
+.rank-founder:hover{
+    transform: translateY(-8px) scale(1.1);
+    box-shadow:
+        0 0 50px rgba(255,0,0,1),
+        inset 0 0 25px rgba(255,120,120,0.4);
+}
+/* نائب المؤسس (الكارت الثاني) */
+.rank-card:nth-child(2){
+    position: relative;
+    border: 2px solid #4b0082;
+    background: linear-gradient(
+        135deg,
+        rgba(30,0,60,0.6),
+        rgba(0,0,0,0.9)
+    );
+    box-shadow:
+        0 0 25px rgba(90,0,140,0.8),
+        inset 0 0 20px rgba(0,0,0,0.6);
+}
+
+/* هالة الظل */
+.rank-card:nth-child(2)::before{
+    content: "";
+    position: absolute;
+    inset: -4px;
+    border-radius: 16px;
+    background: linear-gradient(45deg, #000, #4b0082, #000);
+    filter: blur(16px);
+    opacity: 0.6;
+    z-index: -1;
+}
+/* ====== نار متحركة للمؤسس ====== */
+.rank-founder{
+    position: relative;
+    overflow: hidden;
+}
+
+/* طبقة النار */
+.rank-founder::after{
+    content: "";
+    position: absolute;
+    bottom: -40%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(
+        circle at 50% 60%,
+        rgba(255,80,0,0.9),
+        rgba(255,0,0,0.6),
+        rgba(255,140,0,0.3),
+        transparent 70%
+    );
+    animation: fireMove 4s infinite linear;
+    opacity: 0.7;
+    z-index: 0;
+}
+
+/* فوق النار */
+.rank-founder > *{
+    position: relative;
+    z-index: 2;
+}
+
+/* حركة اللهيب */
+@keyframes fireMove{
+    0%{
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+    50%{
+        transform: translateX(10%) translateY(-10%) rotate(2deg);
+    }
+    100%{
+        transform: translateX(0) translateY(0) rotate(0deg);
+    }
+}
+
+/* وميض ناري */
+.rank-founder{
+    animation: fireGlow 2.5s infinite alternate;
+}
+
+@keyframes fireGlow{
+    from{
+        box-shadow:
+            0 0 25px rgba(255,0,0,0.7),
+            inset 0 0 20px rgba(255,80,80,0.3);
+    }
+    to{
+        box-shadow:
+            0 0 55px rgba(255,80,0,1),
+            inset 0 0 30px rgba(255,120,120,0.5);
+    }
+}
+
+
+/* صورة نائب المؤسس */
+.rank-card:nth-child(2) .rank-img{
+    border: 3px solid #6a0dad;
+    box-shadow: 0 0 20px rgba(120,0,200,0.9);
+    filter: grayscale(20%) contrast(1.2);
+}
+
+/* الاسم */
+.rank-card:nth-child(2) .rank-name{
+    color: #caa6ff;
+    text-shadow:
+        0 0 10px rgba(160,100,255,0.9),
+        0 0 25px rgba(80,0,140,0.8);
+}
+
+/* الدور */
+.rank-card:nth-child(2) .rank-role{
+    color: #a88bff;
+    letter-spacing: 2px;
+}
+
+/* Hover */
+.rank-card:nth-child(2):hover{
+    transform: translateY(-6px) scale(1.07);
+    box-shadow:
+        0 0 45px rgba(120,0,200,1),
+        inset 0 0 30px rgba(0,0,0,0.7);
+}
+/* ====== دخان و ظل نابض ====== */
+.rank-card:nth-child(2){
+    position: relative;
+    overflow: hidden;
+}
+
+/* طبقة الدخان */
+.rank-card:nth-child(2)::after{
+    content: "";
+    position: absolute;
+    inset: -40%;
+    background: radial-gradient(
+        circle,
+        rgba(120,0,200,0.25),
+        rgba(30,0,60,0.4),
+        rgba(0,0,0,0.9),
+        transparent 70%
+    );
+    animation: smokePulse 6s infinite ease-in-out;
+    filter: blur(30px);
+    z-index: 0;
+}
+
+/* المحتوى فوق الدخان */
+.rank-card:nth-child(2) > *{
+    position: relative;
+    z-index: 2;
+}
+
+/* نبض الظل */
+@keyframes smokePulse{
+    0%{
+        transform: scale(1) rotate(0deg);
+        opacity: 0.5;
+    }
+    50%{
+        transform: scale(1.1) rotate(3deg);
+        opacity: 0.8;
+    }
+    100%{
+        transform: scale(1) rotate(0deg);
+        opacity: 0.5;
+    }
+}
+
+/* تنفس الظل */
+.rank-card:nth-child(2){
+    animation: shadowBreath 3s infinite alternate;
+}
+
+@keyframes shadowBreath{
+    from{
+        box-shadow:
+            0 0 20px rgba(80,0,140,0.7),
+            inset 0 0 25px rgba(0,0,0,0.6);
+    }
+    to{
+        box-shadow:
+            0 0 45px rgba(160,80,255,1),
+            inset 0 0 35px rgba(0,0,0,0.8);
+    }
+}
 
 
 
@@ -1033,11 +1342,30 @@ body::before {
        <div class="rank-grid">
 
   <!-- Founder Card -->
+<div class="rank-card rank-founder">
+    <div class="rank-top">
+      <img src="./yuritchi.jfif" class="rank-img">
+      <div class="rank-info">
+        <div class="rank-role">المؤسس</div>
+        <div class="rank-name">يوريتشي </div>
+      </div>
+    </div>
+    <div class="rank-tags">
+      <span class="rank-tag">حكيم</span>
+      <span class="rank-tag">مثابر</span>
+    </div>
+    <div class="achievements-list">
+       بدأت مسيره يوريتشي داخل ريفينيا ك نائب مؤسس وأصبح خلال وقت قياسي المؤسس بعد إدارته الجباره الذي تعتبر الأقوى ب تاريخ الممالك وهو رمز للمشرف المتكامل والاكثر انضباط و الاكثر صرامه داخل عالم الممالك وايضا يوريتشي مؤسس نيفيريا افتتحها بـ 2025/8/8 بعد مشاكل حيس أصبح هناك الكثير من الخيانات و الانقلابات عليه من ريفينيا لاكن ما استسلم و كمل مسيرته وفتح نيفيريا لكي تصبح افضل مملكه اداريه بتاريخ الممالك وثاني اقوى مملكه ب عصرها رغم أنها احدث الممالك وقتاً وهذه يعني أن يوريتشي افضل مؤسس اداري ب التاريخ الممالك أجمع.
+    </div>
+  </div>
+
+
+
   <div class="rank-card rank-founder">
     <div class="rank-top">
       <img src="https://files.catbox.moe/i6oi0l.jpg" class="rank-img">
       <div class="rank-info">
-        <div class="rank-role">المؤسس</div>
+        <div class="rank-role"> نائب المؤسس   </div>
         <div class="rank-name">غيو</div>
       </div>
     </div>
@@ -1045,31 +1373,11 @@ body::before {
       <span class="rank-tag">قائد</span>
       <span class="rank-tag">أسطورة</span>
     </div>
-    <div class="rank-desc">
-      قوي ما يأتي مرتين..
-    </div>
+    <div class="achievements-list">
+بدأت مسيره غيو داخل ريفينيا ك اول مشرف و اول ادميرال ب المملكه حيس افتتح تسونامي اقوى مملكه ب تاريخ نيفيريا وريفينيا حيث اوصلها لعدد اكثر من 50 مشرف و تفاعل يومي لا يقل عن 30 الف و 30 عضو +500 رساله لكي تصبح تسونامي 🌊 رمز قوة ريفينيا لفتره من الزمن ثم ترقى ليصبح قمر علوي ك اقوى ناشر ب تاريخ ريفينيا وقتها و اكثرهم مرح و بفتره قصيره اثبت نفسه ب مثلث الاقوى بين الناشرين لكي يترقى الا دوق تسونامي وناريا واصبح بعدها دوقيه غيو اقوى دوقيه داخل ريفينيا سواء نشر أو تفاعل أو اداره ويفتح غيو ثلاث نقابات تنضم ل دوقيته آليا ،لوريان ،اوميغا، ليترقى خلال فتره وجيزه لنائب موسس ريفينيا لكي يصبح اول رتبه عليا تترقى ب التدريج و اول نائب موسس يترقى بتعبه الخاص ليصبح افضل نائب موسس بتاريخ الممالك والاكثر استكمال وأكثر رتبه مرحه عرفتها التاريخ و كان بجانب يوريتشي ك افضل ثنائي ب تاريخ ريفينيا ونيفيريا و اكمل غيو مسيرته الا أن أكمل اكثر من سنه ونصف نائب يوريتشي سواء ب ريفينيا أو نيفيريا ليصبح بعدها بعد اعتزال يوريتشي ثاني مؤسسين نيفيريا والاخير ب تاريخها العظيم    </div>
   </div>
 
-  <!-- Vice Founder Card -->
-  <div class="rank-card">
-    <div class="rank-top">
-      <img src="https://files.catbox.moe/6ze0tp.jpg" class="rank-img">
-      <div class="rank-info">
-        <div class="rank-role">نائبة المؤسس</div>
-        <div class="rank-name">هيستوريا</div>
-      </div>
-    </div>
-    <div class="rank-tags">
-      <span class="rank-tag">قائد</span>
-      <span class="rank-tag">ذكاء</span>
-    </div>
-    <div class="rank-desc">
-      دومًا مثال للتفاني..
-    </div>
-  </div>
-
-  <!-- Lord Card -->
-  <div class="rank-card">
+   <div class="rank-card">
     <div class="rank-top">
       <img src="https://files.catbox.moe/wm3l5k.jpg" class="rank-img">
       <div class="rank-info">
@@ -1081,11 +1389,53 @@ body::before {
       <span class="rank-tag">محارب</span>
       <span class="rank-tag">الارادة </span>
     </div>
-    <div class="rank-desc">
-      حامي المملكة بقوة..
+    <div class="achievements-list">
+نا ميغومي لورد مملكة نيفيريا المملكة التي لم تنكسر رغم الضعف، ولم تسقط رغم قلة العدد
+في أصعب الفترات، حين تراجع الجميع، صمدت نيفيريا، وكنت أنا اللورد الذي وقف حاميًا لها، ثابتًا حين اهتزت الأرض من تحتنا
+لم تكن قوتي في السيف فقط، بل في الصبر الحكمة وتحمل المسؤولية
+دافعت عن نيفيريا وقت الانكسار، وحميت رايتها حين حاول الكثير طمسها ولم أتخلَّ عنها في زمن الشدة.
+نيفيريا لم تصل لما هي عليه صدفة بل بتضحيات وقرارات صعبة وولاء لا يهتز
+وما دمت لوردها ستبقى نيفيريا شامخة، لا تُكسر، ولا تُهان، ولا تنسى
+الشعار: من صمد في الضعف… لا يُهزم في القوة    </div>
+  </div>
+
+
+  
+  <!-- Vice Founder Card -->
+  <div class="rank-card">
+    <div class="rank-top">
+      <img src="https://files.catbox.moe/6ze0tp.jpg" class="rank-img">
+      <div class="rank-info">
+        <div class="rank-role">نائبة اللورد</div>
+        <div class="rank-name">هيستوريا</div>
+      </div>
+    </div>
+    <div class="rank-tags">
+      <span class="rank-tag">قائد</span>
+      <span class="rank-tag">ذكاء</span>
+    </div>
+    <div class="achievements-list">
+      دومًا مثال للتفاني..
     </div>
   </div>
 
+  <!-- Lord Card -->
+  <div class="rank-card">
+    <div class="rank-top">
+      <img src="./aowni.jfif" class="rank-img">
+      <div class="rank-info">
+        <div class="rank-role">نائب لورد</div>
+        <div class="rank-name">اومني</div>
+      </div>
+    </div>
+    <div class="rank-tags">
+      <span class="rank-tag">ناشر </span>
+      <span class="rank-tag">قادح </span>
+    </div>
+    <div class="achievements-list">
+بدأت رحلة أوميني من الصفر في شينيغامي، حيث أظهر سرعة استثنائية في الترقي ليصل لرتبة ادميرال خلال شهر واحد. وبذكائه الفائق، أحدث ثورة إدارية قفزت بتفاعل النقابة من 3k إلى 25k لمدة 13 يوم متواصل، محققاً استقراراً تاريخياً جعلها المرشحة الأولى لبطولة سان،واجه أوميني التحدي الأكبر عند انهيار طاقمه الإداري(نزول النواب والعميد مؤبد بالإضافة للاعتزال المفاجئ لـ 7مشرفين)، لكنه أثبت معدنه القيادي بإعادة بناء الفريق من جديد، ليقود شينيغامي بعد الانفصال عن ريفينيا لتحقيق أرقام قياسية (80 عضواً ويوم قياسي بـ 97 نشراً ليفتح رايتون في ثلاث ايام والتي أخذت لقب العاصمة وليكون اقوى ناشر في نيفيريا). لم يكتفِ بالإدارة، بل تحول إلى افضل معلم في المملكة بتدريب 80 تلميذاً وصلوا لأعلى الرتب (دوقات و امراء)، ليظل أوميني الرمز الأول للذكاء الاجتماعي وتشجيع المشرفين على العمل الجماعي.
+      </div>
+      </div>
   <!-- Advisor Card -->
   <div class="rank-card">
     <div class="rank-top">
@@ -1099,7 +1449,7 @@ body::before {
       <span class="rank-tag">حكيم</span>
       <span class="rank-tag">مخطط</span>
     </div>
-    <div class="rank-desc">
+    <div class="achievements-list">
       العقل المدبر وراء كل خطة..
     </div>
   </div>
@@ -1132,15 +1482,6 @@ body::before {
       </div>
     </a>
 
-    <a href="doq.html">
-      <div class="card1 duke">
-        <div class="icon-circle">
-          <i class="fa-solid fa-chess"></i>
-        </div>
-        <h3>دوق</h3>
-        <p>دوقات رسميين للمملكة</p>
-      </div>
-    </a>
 
     <a href="mochrif.html">
       <div class="card1 admin">
