@@ -202,7 +202,57 @@ button {
             color: #000;
             box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
         }
-    </style
+    /* للأجهزة الصغيرة (التلفونات) */
+@media (max-width: 480px) {
+  .dev-card {
+    width: 90%; /* يعرض البطاقة بشكل كامل تقريباً */
+    padding: 20px;
+  }
+
+  button {
+    padding: 14px 24px; /* تكبير شوية الزر */
+    font-size: 16px;
+  }
+
+  .developer-badge {
+    bottom: 15px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    font-size: 12px;
+    gap: 6px;
+  }
+
+  .back {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  h1.title {
+    font-size: 22px; /* تصغير العنوان باش يناسب الهاتف */
+  }
+
+  .dev-name {
+    font-size: 18px;
+  }
+
+  .dev-role {
+    font-size: 14px;
+  }
+
+  .dev-info li {
+    font-size: 13px;
+  }
+
+  .contact-link i {
+    font-size: 16px;
+  }
+
+  .contact-link span {
+    font-size: 14px;
+  }
+}
+
 </style>
 
   <!-- شاشة الدخول السينمائي -->
