@@ -252,6 +252,51 @@ button {
     font-size: 14px;
   }
 }
+/* للأجهزة الصغيرة (التلفونات) */
+@media (max-width: 480px) {
+  .dev-card {
+    width: 95%;  /* خلي العرض قريب من كامل الشاشة */
+    max-width: 420px; /* الحد الأقصى كما في اللابتوب */
+    padding: 25px; /* تكبير padding باش البطاقة تبان كبيرة */
+    font-size: 16px; /* تكبير الخط بشكل عام */
+  }
+
+  .developer {
+    min-height: 100vh;
+    justify-content: flex-start; /* باش البطاقة تكون في الوسط أو قريب من الأعلى */
+    padding-top: 30px; /* مسافة من الأعلى */
+  }
+
+  h1.title {
+    font-size: 28px; /* تكبير العنوان */
+  }
+
+  .dev-name {
+    font-size: 22px; /* تكبير اسم المطور */
+  }
+
+  .dev-role {
+    font-size: 18px;
+  }
+
+  .dev-info li {
+    font-size: 16px; /* تكبير نص التفاصيل */
+    margin-bottom: 5px;
+  }
+
+  .contact-link i {
+    font-size: 20px;
+  }
+
+  .contact-link span {
+    font-size: 16px;
+  }
+
+  button {
+    padding: 16px 28px;
+    font-size: 16px;
+  }
+}
 
 </style>
 
