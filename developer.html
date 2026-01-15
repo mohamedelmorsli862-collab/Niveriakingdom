@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>المطوّر الأعلى | NIVERIA</title>
+  <link rel="stylesheet" href="developer.css">
+  <!-- Font Awesome للأيقونات -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+<style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #020b1c;
+  color: #e6f4ff;
+  overflow: hidden;
+}
+
+/* 🎬 شاشة السينما */
+#cinematic {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle, #001d3d, #000814);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+  animation: cinematicOut 2.5s ease forwards;
+  animation-delay: 2.5s;
+}
+
+#cinematic h1 {
+  font-size: 60px;
+  color: #7cc8ff;
+  letter-spacing: 6px;
+  animation: glow 1.5s infinite alternate;
+}
+
+#cinematic p {
+  margin-top: 15px;
+  color: #cfe9ff;
+  opacity: 0.8;
+}
+
+@keyframes cinematicOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
+@keyframes glow {
+  from { text-shadow: 0 0 10px #00c6ff; }
+  to { text-shadow: 0 0 30px #00c6ff; }
+}
+
+/* الخلفية */
+.bg-image {
+  position: fixed;
+  inset: 0;
+  background: url("Toji.jfif") center/cover no-repeat;
+  filter: blur(2px) brightness(0.6);
+  z-index: -2;
+}
+
+.bg-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(to bottom, rgba(0,80,160,.6), #020b1c);
+  z-index: -1;
+}
+
+.hidden { opacity: 0; }
+
+.developer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  animation: fadeIn 1.5s ease forwards;
+  animation-delay: 3s;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+.dev-card {
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(120,200,255,0.4);
+  padding: 35px;
+  border-radius: 22px;
+  width: 420px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 40px rgba(0,170,255,.4);
+}
+
+.contact {
+  margin: 20px 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contact-link {
+  color: #cfe9ff;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  align-items: center;
+  transition: .3s;
+}
+
+.contact-link i {
+  font-size: 18px;
+  color: #7cc8ff;
+}
+
+.contact-link:hover {
+  transform: scale(1.1);
+  color: white;
+}
+
+.insta i {
+  color: #ff6ad5;
+}
+
+button {
+  padding: 12px 28px;
+  background: linear-gradient(135deg,#00c6ff,#0072ff);
+  border: none;
+  border-radius: 14px;
+  color: white;
+  cursor: pointer;
+  margin-top: 15px;
+}
+.developer-badge {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            /* يمكنك تغييرها إلى right إذا أردت */
+            background: rgba(15, 23, 42, 0.6);
+            /* زجاجي داكن */
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            padding: 8px 15px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            z-index: 9999;
+            transition: 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            cursor: pointer;
+            text-decoration: none;
+        }
+
+        .developer-badge:hover {
+            transform: translateY(-5px) scale(1.05);
+            border-color: #00f2fe;
+            box-shadow: 0 5px 15px rgba(0, 242, 254, 0.2);
+            background: rgba(15, 23, 42, 0.9);
+        }
+
+        .developer-badge .text {
+            font-family: 'Cinzel', serif;
+            /* أو أي خط تفضله */
+            font-size: 11px;
+            color: #fff;
+            letter-spacing: 1.5px;
+            font-weight: bold;
+        }
+
+        .developer-badge .code-icon {
+            color: #00f2fe;
+            font-weight: 900;
+            font-family: monospace;
+            font-size: 14px;
+            animation: blink 2s infinite;
+        }
+        .back {
+            display: inline-block;
+            padding: 10px 30px;
+            border-radius: 30px;
+            border: 1px solid #00f2fe;
+            color: #00f2fe;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+            background: rgba(0, 242, 254, 0.05);
+            backdrop-filter: blur(5px);
+        }
+
+        .back:hover {
+            background: #00f2fe;
+            color: #000;
+            box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
+        }
+    </style
+</style>
+
+  <!-- شاشة الدخول السينمائي -->
+  <div id="cinematic">
+    <h1>NIVERIA</h1>
+    <p>⚜️ النظام يولد… ⚙️ المطور يحكم</p>
+  </div>
+  
+  <!-- الخلفية بالصورة -->
+  <div class="bg-image"></div>
+  <div class="bg-overlay"></div>
+
+  <section class="developer hidden">
+    <h1 class="title">⚜️ المطوّر الأعلى للمملكة ⚜️</h1>
+
+    <div class="dev-card">
+      <h2 class="dev-name">👑  𝑲𝒂𝒊𝒓𝒐 – 𝑻𝒐𝒋𝒊 ⛧</h2>
+      <p class="dev-role">مشرف & مطوّر نظام نيفيريا</p>
+
+      <ul class="dev-info">
+        <li>⚙️ هندسة الأنظمة</li>
+        <li>🛡️ تدريب المشرفين</li>
+        <li>🔥 بناء العوالم الإدارية</li>
+        <li>👁️ مراقبة التوازن</li>
+      </ul>
+
+      <div class="contact">
+        <p>لتواصل 👇</p>
+        <a href="tel:+212693864590" class="contact-link">
+          <i class="fa-solid fa-phone"></i>
+          <span>+212 693864590</span>
+        </a>
+
+        <a href="https://www.instagram.com/mohammede_elmorsli?igsh=a2gxZjVjcDgxM3dr" target="_blank" class="contact-link insta">
+          <i class="fa-brands fa-instagram"></i>
+          <span>Mohamed</span>
+        </a>
+      </div>
+
+      <button onclick="showPower()">كشف الهيبة</button>
+      <p id="power" class="power"></p>
+    </div>
+
+    <div class="signature">
+      « من يتحكم في الكود… يتحكم في المملكة »
+    </div>
+    <div style="text-align: center; width: 100%; margin-top: 40px;">
+            <a href="index.html" class="back">⬅ الرجوع للمملكة</a>
+        </div>
+  </section>
+  
+   <a href="#" class="developer-badge">
+            <span class="text"> 𝑲𝒂𝒊𝒓𝒐 – 𝑻𝒐𝒋𝒊 ⛧</span>
+            <span class="code-icon">&lt;/&gt;</span>
+        </a>
+  <script>
+    function showPower() {
+  const powers = [
+    "👑 العقل المدبر لنيفيريا",
+    "🔥 مطور النظام الأعلى",
+    "⚙️ سيد الأكواد",
+    "🛡️ حارس التوازن"
+  ];
+  document.getElementById("power").innerText =
+    powers[Math.floor(Math.random() * powers.length)];
+}
+
+  </script>
+</body>
+</html>
