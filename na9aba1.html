@@ -141,6 +141,47 @@ body{
         transform:translateY(0);
     }
 }
+.card {
+  position: relative;
+  width: 300px;
+  height: 180px;
+  border-radius: 25px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+}
+
+/* الفيديو كخلفية */
+.card-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* محتوى الكارد فوق الفيديو */
+.card h2,
+.card .icon {
+  position: relative;
+  z-index: 1;
+}
+
+/* Overlay خفيف باش النص يبان */
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.2),
+    rgba(0,0,0,0.65)
+  );
+  z-index: 0;
+}
 
     </style>
 </head>
@@ -157,7 +198,7 @@ body{
 <div class="cards">
 
     <!-- النقابة الأم (صورة مختلفة) -->
-    <div class="card mother" style="--bg:url('./Toji.jfif')">
+    <div class="card mother" style="--bg:url('./niveria.jfif')">
         <h3>نقابة <span>طوكيو</span></h3>
         <p><span>⛩️</span></p>
     </div>
@@ -171,167 +212,290 @@ body{
     <!-- صورة موحدة لباقي النقابات -->
     <!-- غير بدّل mo3tazil.jfif بالصورة اللي بغيت -->
 
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>ايفرست </h2><span class="icon">🗻</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>ستار </h2><span class="icon">⭐</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>سيلسينا </h2><span class="icon">💎</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>ماكتيفيان </h2><span class="icon">🎐</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>هيروكو </h2><span class="icon">🪶</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>مون </h2><span class="icon">🌑</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>رايتون </h2><span class="icon">⚡</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>برايم </h2><span>♦️</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>يورك </h2><span>🕷️</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>تسونامي </h2><span class="icon">🌊</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>شينغامي </h2><span class="icon">☠️</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>شيبويا </h2><span class="icon">🐦‍🔥</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>ناريا </h2><span class="icon">🔥</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>اسبادا </h2><span class="icon">🌪️</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>تسوكي </h2><span class="icon">⚕️</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>ويسكي </h2><span class="icon">🍷</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>اثينا </h2><span class="icon">🔮</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>دايف </h2><span class="icon">🪼</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>سبارتا </h2><span class="icon">🔱</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>اكاتسكي </h2><span class="icon">⚜️</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>نوفا </h2><span class="icon">🌒</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>سيلفا </h2><span class="icon">💫</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>اوميغا </h2><span class="icon">❄️</span></div>
-    <div class="card" style="--bg:url('./mo3tazil.jfif')"><h2>كريستال </h2><span class="icon">💎</span></div>
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card">
+  <video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
+
+  <h2>ايفرست</h2>
+  <span class="icon">🗻</span>
+</div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>ستار </h2><span class="icon">⭐</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>سيلسينا </h2><span class="icon">💎</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>ماكتيفيان </h2><span class="icon">🎐</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>هيروكو </h2><span class="icon">🪶</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>مون </h2><span class="icon">🌑</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>رايتون </h2><span class="icon">⚡</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>برايم </h2><span>♦️</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>يورك </h2><span>🕷️</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>تسونامي </h2><span class="icon">🌊</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>شينغامي </h2><span class="icon">☠️</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>شيبويا </h2><span class="icon">🐦‍🔥</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>ناريا </h2><span class="icon">🔥</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>اسبادا </h2><span class="icon">🌪️</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>تسوكي </h2><span class="icon">⚕️</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>ويسكي </h2><span class="icon">🍷</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>اثينا </h2><span class="icon">🔮</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>دايف </h2><span class="icon">🪼</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>سبارتا </h2><span class="icon">🔱</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>اكاتسكي </h2><span class="icon">⚜️</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>نوفا </h2><span class="icon">🌒</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>سيلفا </h2><span class="icon">💫</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>اوميغا </h2><span class="icon">❄️</span></div>
+    <div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video><h2>كريستال </h2><span class="icon">💎</span></div>
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>ياكوزا</h2><span class="icon">🪽</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>لايت</h2><span class="icon">✨</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>توفانا</h2><span class="icon">💧</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>اكوا</h2><span class="icon">🪻</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>لوريا</h2><span class="icon">🥀</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>الديا</h2><span class="icon">🪽</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>سبايدر</h2><span class="icon">🕸️</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>كلوفر</h2><span class="icon">🍀</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>فونتين</h2><span class="icon">⚖️</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>ارايس</h2><span class="icon">🧣</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>اكليس</h2><span class="icon">🏮</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>فليورا</h2><span class="icon">🪭</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>سيلفر</h2><span class="icon">⚓</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>ستارك</h2><span class="icon">⚔️</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>انتيكا</h2><span class="icon">☕</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>كارتيل</h2><span class="icon">🥂</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>مانهاتن</h2><span class="icon">💧</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>لاو</h2><span class="icon">🐼</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>يوركشن</h2><span class="icon">🔱</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>اوهارا</h2><span class="icon">🛡️</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>الاسكا</h2><span class="icon">⛈️</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>شادو</h2><span class="icon">🌗</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>موسكو</h2><span class="icon">🌨️</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>كاريوكي</h2><span class="icon">🎼</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>اوركا</h2><span class="icon">🐋</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>لايف</h2><span class="icon">🌳</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>أوهايو</h2><span class="icon">♨️</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>هايتي</h2><span class="icon">🌿</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>واندا</h2><span class="icon">🍀</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>ماسادورا</h2><span class="icon">☀️</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>ديفيل</h2><span class="icon">🩸</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>جلاكسي</h2><span class="icon">🪐</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>كراون</h2><span class="icon">👑</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>اليا</h2><span class="icon">🌕</span>
 </div>
 
-<div class="card" style="--bg:url('./mo3tazil.jfif')">
+<div class="card" ><video class="card-video" autoplay muted loop playsinline>
+    <source src="./niveria.mp4" type="video/mp4">
+  </video>
   <h2>ناتلان</h2><span class="icon">🌋</span>
 </div>
 
