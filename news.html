@@ -276,6 +276,37 @@
             color: #000;
             box-shadow: 0 0 20px rgba(0, 242, 254, 0.4);
         }
+        .achievements-list {
+    font-size: 12px;
+    color: #ddd;
+    line-height: 1.7;
+    margin-bottom: 15px;
+
+    max-height: 120px;       /* الطول المحدد */
+    overflow-y: auto;        /* سكرول عمودي */
+    padding-right: 6px;
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.4s ease;
+}
+
+/* إظهار عند hover */
+.legend-card:hover .achievements-list {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* سكرول فخم */
+.achievements-list::-webkit-scrollbar {
+    width: 4px;
+}
+
+.achievements-list::-webkit-scrollbar-thumb {
+    background: rgba(255, 215, 0, 0.6);
+    border-radius: 10px;
+}
+
     </style>
 </head>
 
@@ -319,18 +350,21 @@
             </div>
         </article>
 
+        
+
         <article class="legend-card">
             <div class="card-bg-img"
-                style="background-image: url('https://files.catbox.moe/w1pkdz.jpg'); background-color: #1a1a1a;"></div>
+                style="background-image: url('./artar.jfif'); background-color: #1a1a1a;"></div>
             <div class="card-overlay"></div>
+            <div class="corner-rank">LEGEND</div>
 
             <div class="card-content">
-                <span class="role"> نائب لورد</span>
+                <span class="role"> شوغن  </span>
                 <h2 class="name">أرثر</h2>
 
                 <div class="tags">
                     <span class="tag">متهور</span>
-                    <span class="tag">ناشر</span>
+                    <span class="tag">مخطط </span>
                 </div>
 
                 <div class="achievements-list">
@@ -346,10 +380,10 @@
             <div class="card-bg-img"
                 style="background-image: url('./foshi.jfif'); background-color: #1a1a1a;"></div>
             <div class="card-overlay"></div>
-            <div class="corner-rank">ادمرال</div>
+            <div class="corner-rank">ORIGIN</div>
 
             <div class="card-content">
-                <span class="role"> </span>
+                <span class="role">ادمرال </span>
                 <h2 class="name">فوشي</h2>
 
                 <div class="tags">
